@@ -1,0 +1,182 @@
+# 命名规范
+
+## 文件命名
+
+### TypeScript/React 文件
+- 组件文件：`PascalCase.tsx`（如 `LoginForm.tsx`）
+- 工具文件：`camelCase.ts`（如 `dateUtils.ts`）
+- 测试文件：`*.test.ts` 或 `*.test.tsx`
+- 类型定义：`types.ts` 或 `*.types.ts`
+
+### 目录命名
+- 使用 `kebab-case` 或 `camelCase`
+- 示例：`components/`, `utils/`, `domain/`
+
+## 代码命名
+
+### 类和组件
+```typescript
+// ✅ PascalCase
+class User { }
+function LoginForm() { }
+const TaskItem = () => { };
+```
+
+### 函数和变量
+```typescript
+// ✅ camelCase
+function getUserById() { }
+const userName = 'test';
+let isActive = true;
+```
+
+### 常量和枚举
+```typescript
+// ✅ UPPER_SNAKE_CASE（真正常量）
+const MAX_RETRY_COUNT = 3;
+const API_BASE_URL = 'https://api.example.com';
+
+// ✅ PascalCase（枚举）
+enum TaskStatus {
+  Todo = 'todo',
+  InProgress = 'in_progress',
+  Done = 'done',
+}
+```
+
+### 类型和接口
+```typescript
+// ✅ PascalCase
+interface UserProps {
+  id: string;
+  name: string;
+}
+
+type TaskStatus = 'todo' | 'in_progress' | 'done';
+```
+
+## 数据库命名
+
+### 表名
+```sql
+-- ✅ 小写 + 下划线，复数形式
+CREATE TABLE users ( );
+CREATE TABLE tasks ( );
+CREATE TABLE attendance_records ( );
+```
+
+### 列名
+```sql
+-- ✅ 小写 + 下划线
+id
+user_id          -- 外键
+email
+password_hash
+is_active        -- 布尔值
+created_at
+updated_at
+```
+
+### 索引名
+```sql
+-- ✅ 表名_列名_idx
+CREATE INDEX tasks_user_id_idx ON tasks(user_id);
+CREATE INDEX tasks_status_idx ON tasks(status);
+
+-- ✅ 唯一索引
+CREATE UNIQUE INDEX users_email_unique ON users(email);
+```
+
+## 测试命名
+
+### 测试文件
+```typescript
+// ✅ 与被测试文件同名 + .test
+user.test.ts
+LoginForm.test.tsx
+task.service.test.ts
+```
+
+### 测试用例
+```typescript
+// ✅ 描述性命名，使用中文或日文
+describe('User', () => {
+  it('邮箱格式无效时抛出错误', () => {});
+  it('成功创建用户', () => {});
+});
+
+// ✅ 使用行为描述
+it('should create user with valid email', () => {});
+it('should throw error when email is invalid', () => {});
+```
+
+## API 命名
+
+### RESTful 路径
+```typescript
+// ✅ 资源名复数，小写
+GET /api/tasks
+POST /api/tasks
+GET /api/tasks/:id
+PATCH /api/tasks/:id
+DELETE /api/tasks/:id
+
+// ✅ 嵌套资源
+GET /api/users/:userId/tasks
+```
+
+### 请求/响应 DTO
+```typescript
+// ✅ 明确用途
+interface CreateTaskRequest {
+  title: string;
+  description?: string;
+}
+
+interface TaskResponse {
+  id: string;
+  title: string;
+  createdAt: string;
+}
+```
+
+## 错误码命名
+
+```typescript
+// ✅ UPPER_SNAKE_CASE
+enum ErrorCode {
+  INVALID_CREDENTIALS = 'INVALID_CREDENTIALS',
+  VALIDATION_ERROR = 'VALIDATION_ERROR',
+  NOT_FOUND = 'NOT_FOUND',
+}
+```
+
+## CSS 类名（如使用）
+
+```css
+/* ✅ kebab-case */
+.login-form { }
+.task-list-item { }
+.error-message { }
+```
+
+## 禁止事项
+
+- ❌ 匈牙利命名法（如 `strName`, `iCount`）
+- ❌ 缩写不明（如 `usr`, `dt`, `cnt`）
+- ❌ 魔术数字（使用具名常量）
+- ❌ 文件名大小写混用（如 `LoginForm.tsx` vs `loginform.tsx`）
+
+## 检查清单
+
+创建新文件时确认：
+- [ ] 文件名符合规范
+- [ ] 目录名符合规范
+- [ ] 导出名称符合规范
+- [ ] 测试文件命名正确
+
+代码审查时确认：
+- [ ] 变量名清晰达意
+- [ ] 函数名表达意图
+- [ ] 类名/组件名使用 PascalCase
+- [ ] 常量使用 UPPER_SNAKE_CASE
