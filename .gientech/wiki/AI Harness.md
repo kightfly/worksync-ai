@@ -67,6 +67,7 @@
 |------|------|
 | [交付流程与 Skills](交付流程与Skills.md) | 4p12s + GienSpec + Superpower 与 `skills/` 映射 |
 | [designdoc 交付物指南](designdoc交付物指南.md) | `designdoc/` 路径、模板、十二步对照 |
+| [Harness 实践案例](../../designdoc/delivery/harness-practice-case.md) | 以 **GienCoder 开发助手** 为主线的案例内容、截图索引与价值总结 |
 | [Wiki 维护约定](Wiki维护约定.md) | 真相源优先级、状态标注、更新时机 |
 | [Wiki 结构性改动说明](Wiki结构性改动说明.md) | 2026-07-21 审查为何大幅重写、非增量修改 |
 

@@ -1,0 +1,52 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+
+const loginFormSchema = z.object({
+  email: z.string().min(1, 'メールアドレスは必須です').email('メールアドレスの形式が正しくありません'),
+  password: z.string().min(6, 'パスワードは6文字以上で入力してください'),
+});
+
+type LoginFormValues = z.infer<typeof loginFormSchema>;
+
+interface LoginFormProps {
+  onSubmit: (values: LoginFormValues) => Promise<void>;
+  errorMessage: string | null;
+  isSubmitting: boolean;
+}
+
+export function LoginForm({ onSubmit, errorMessage, isSubmitting }: LoginFormProps) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormValues>({
+    resolver: zodResolver(loginFormSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <label>
+        メールアドレス
+        <input type="email" autoComplete="username" {...register('email')} />
+      </label>
+      {errors.email ? <p role="alert">{errors.email.message}</p> : null}
+
+      <label>
+        パスワード
+        <input type="password" autoComplete="current-password" {...register('password')} />
+      </label>
+      {errors.password ? <p role="alert">{errors.password.message}</p> : null}
+
+      {errorMessage ? <p role="alert">{errorMessage}</p> : null}
+
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'ログイン中...' : 'ログイン'}
+      </button>
+    </form>
+  );
+}

@@ -22,6 +22,7 @@ designdoc/
 ├── delivery/              # 交付状态与对齐
 │   ├── delivery-state.md           # ① 十二步进度（必维护）
 │   ├── harness-alignment-status.md # Harness 方法论对齐
+│   ├── harness-practice-case.md    # Harness 实践案例（GienCoder 视角）
 │   └── wiki-audit-status.md        # Wiki 分步审查
 ├── specs/                 # ②–⑤⑦ 规格与设计
 │   ├── requirements-register.md    # ②
@@ -65,6 +66,7 @@ designdoc/
 | `design.md` | 已有 | 与 Wiki API/数据模型对齐审查中 |
 | `verification-plan.md` | 📋 待建 | 模板已备 |
 | `tasks.md` + Phase 任务 | 部分 | 新 TASK 用模板 |
+| `delivery/harness-practice-case.md` | 已有 | GienCoder 使用方法、操作过程、结果与价值沉淀 |
 | `deploy-log.md` | 📋 待建 | deploy-test CI 已就绪 |
 
 详情见 [`delivery-state.md`](../../designdoc/delivery/delivery-state.md)。

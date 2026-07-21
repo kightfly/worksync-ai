@@ -5,7 +5,7 @@
 > **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.cursor/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-21  
-**当前焦点步骤**：**⑤⑥ 已确认**；下一步 **⑦ 任务细化** → **⑧ TDD**
+**当前焦点步骤**：**⑪ Git 提交推送** — ⑩ E2E 主路径已通过，可整理提交摘要
 
 ---
 
@@ -31,10 +31,10 @@
 | ④ | 用户故事 | `done` | PRD | `user-stories.md` | US-003/012 子场景、边界 GWT 已补 |
 | ⑤ | 技术设计 | `done` | 用户故事 | `design.md` v0.2.0 | 状态机、打刻只读、INVALID_STATE_TRANSITION |
 | ⑥ | 验证计划 | `done` | 技术设计 | `verification/verification-plan.md` | 测试矩阵 + E2E 最小集 |
-| ⑦ | 任务拆分 | `gate_pending` | 设计+验证计划 | `tasks.md` + `tasks/` | Phase 任务已有；可按 V-* 细化 TASK |
-| ⑧ | 执行开发 | `blocked` | TASK | 代码 + 测试证据 | 可启动 TASK-B101 等领域层；依赖 ⑦ 确认 |
-| ⑨ | 集成测试 | `not_started` | ⑧ | `verification-result.md` | API `/health` 可作集成起点 |
-| ⑩ | E2E 测试 | `in_progress` | ⑨ | `apps/web/e2e/` | **冒烟已过**；业务主路径待 ⑧ |
+| ⑦ | 任务拆分 | `done` | 设计+验证计划 | `tasks.md` + `tasks/` | B102 TASK 文件已建；B201/B202 已勾选 |
+| ⑧ | 执行开发 | `done` | TASK | 代码 + 测试证据 | Auth ✅；Task CRUD API ✅；Attendance 只读 API ✅；前端最小链路 ✅ |
+| ⑨ | 集成测试 | `done` | ⑧ | `verification/verification-result.md` | 真 DB + 真 API 集成结果已回写；浏览器全链路留到⑩ |
+| ⑩ | E2E 测试 | `done` | ⑨ | `apps/web/e2e/`、`apps/web/playwright-report/` | Playwright 主路径 2 passed；真浏览器 + 真 API + 真 DB 已验证 |
 | ⑪ | Git 提交推送 | `not_started` | ⑩ | commit / MR | 需用户明确授权 |
 | ⑫ | 测试环境部署 | `in_progress` | ⑪ | `deploy-log.md` + CI Artifact | **deploy-test job 已就绪**；真实 URL 待团队 hosting |
 
@@ -52,6 +52,7 @@
 
 - [ ] 更新相关步骤的状态 / 输出路径 / 阻塞项
 - [ ] 若完成 Harness 对齐子任务，同步 `harness-alignment-status.md`
+- [ ] 若本步有可对外叙述的 Harness 操作或交付物，同步更新 `harness-practice-case.md` 与附录快照
 
 ---
 

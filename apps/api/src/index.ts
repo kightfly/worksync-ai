@@ -1,8 +1,9 @@
-import { buildServer } from './server';
+import { getEnv } from './config/env.js';
+import { buildServer } from './server.js';
 
 async function main() {
   const app = await buildServer();
-  const port = Number(process.env.PORT ?? 3000);
+  const { port } = getEnv();
   await app.listen({ port, host: '0.0.0.0' });
 }
 

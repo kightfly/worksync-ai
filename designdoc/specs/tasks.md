@@ -36,17 +36,17 @@
 
 ### B1: 领域层
 
-- [ ] TASK-B101: 创建 User 实体
-  - 文件：`packages/domain/entities/user.ts`
-  - 测试：`packages/domain/entities/user.test.ts`
+- [x] TASK-B101: 创建 User 实体
+  - 文件：`packages/domain/src/entities/user.ts`
+  - 测试：`packages/domain/src/entities/user.test.ts`
   - 验收：
     - 邮箱格式验证
     - 密码长度验证（最少 6 位）
     - 创建成功返回 User 对象
 
-- [ ] TASK-B102: 创建 Task 实体
-  - 文件：`packages/domain/entities/task.ts`
-  - 测试：`packages/domain/entities/task.test.ts`
+- [x] TASK-B102: 创建 Task 实体
+  - 文件：`packages/domain/src/entities/task.ts`
+  - 测试：`packages/domain/src/entities/task.test.ts`
   - 验收：
     - 标题必填
     - 状态转换逻辑（todo → in_progress → done）
@@ -62,48 +62,48 @@
 
 ### B2: 数据层
 
-- [ ] TASK-B201: 配置 Drizzle ORM 和 PostgreSQL
-  - 文件：`packages/infrastructure/db/schema.ts`
-  - 测试：`packages/infrastructure/db/schema.test.ts`
+- [x] TASK-B201: 配置 Drizzle ORM 和 PostgreSQL
+  - 文件：`packages/infrastructure/src/db/schema.ts`
+  - 测试：`packages/infrastructure/src/db/schema.test.ts`
   - 验收：
     - Schema 定义完整
     - 类型导出正确
     - 索引设计合理
 
-- [ ] TASK-B202: 创建数据库迁移
-  - 文件：`packages/infrastructure/db/migrations/`
+- [x] TASK-B202: 创建数据库迁移
+  - 文件：`packages/infrastructure/drizzle/`（`drizzle-kit push:pg` 已推送到 Supabase）
   - 测试：手动验证迁移可执行
   - 验收：
     - 迁移文件生成成功
     - 迁移可重复执行
 
-- [ ] TASK-B203: 创建 UserRepository
-  - 文件：`packages/infrastructure/repositories/user.repository.ts`
-  - 测试：`packages/infrastructure/repositories/user.repository.test.ts`
+- [x] TASK-B203: 创建 UserRepository
+  - 文件：`packages/infrastructure/src/repositories/user.repository.ts`
+  - 测试：`packages/infrastructure/src/repositories/user.repository.integration.test.ts`
   - 验收：
     - CRUD 操作完整
     - 按邮箱查询
     - 事务支持
 
-- [ ] TASK-B204: 创建 TaskRepository
-  - 文件：`packages/infrastructure/repositories/task.repository.ts`
-  - 测试：`packages/infrastructure/repositories/task.repository.test.ts`
+- [x] TASK-B204: 创建 TaskRepository
+  - 文件：`packages/infrastructure/src/repositories/task.repository.ts`
+  - 测试：`packages/infrastructure/src/repositories/task.repository.integration.test.ts`
   - 验收：
     - CRUD 操作完整
     - 按用户 ID 查询
     - 按状态筛选
 
-- [ ] TASK-B205: 创建 AttendanceRepository
-  - 文件：`packages/infrastructure/repositories/attendance.repository.ts`
-  - 测试：`packages/infrastructure/repositories/attendance.repository.test.ts`
+- [x] TASK-B205: 创建 AttendanceRepository
+  - 文件：`packages/infrastructure/src/repositories/attendance.repository.ts`
+  - 测试：`packages/infrastructure/src/repositories/attendance.repository.integration.test.ts`
   - 验收：
     - CRUD 操作完整
     - 日期范围查询
     - 按日聚合统计
 
-- [ ] TASK-B206: 创建种子数据
-  - 文件：`packages/infrastructure/db/seed.ts`
-  - 测试：手动验证数据插入
+- [x] TASK-B206: 创建种子数据
+  - 文件：`packages/infrastructure/src/db/seed.ts`
+  - 测试：手动验证数据插入（`npm run db:seed` 成功）
   - 验收：
     - 测试用户创建
     - 测试任务创建
@@ -130,7 +130,7 @@
 
 ### C2: 认证 API
 
-- [ ] TASK-C201: 登录 API
+- [x] TASK-C201: 登录 API
   - 文件：`apps/api/src/routes/auth.ts`
   - 测试：`apps/api/src/routes/auth.test.ts`
   - 验收：
@@ -138,7 +138,7 @@
     - 登录成功返回 token
     - 登录失败返回错误
 
-- [ ] TASK-C202: 登出 API
+- [x] TASK-C202: 登出 API
   - 文件：`apps/api/src/routes/auth.ts`
   - 测试：`apps/api/src/routes/auth.test.ts`
   - 验收：
@@ -147,7 +147,7 @@
 
 ### C3: 任务 API
 
-- [ ] TASK-C301: 创建任务 API
+- [x] TASK-C301: 创建任务 API
   - 文件：`apps/api/src/routes/tasks.ts`
   - 测试：`apps/api/src/routes/tasks.test.ts`
   - 验收：
@@ -155,14 +155,14 @@
     - 创建成功返回 201
     - 数据持久化
 
-- [ ] TASK-C302: 获取任务列表 API
+- [x] TASK-C302: 获取任务列表 API
   - 文件：`apps/api/src/routes/tasks.ts`
   - 测试：`apps/api/src/routes/tasks.test.ts`
   - 验收：
     - 返回用户任务列表
     - 按创建时间倒序
 
-- [ ] TASK-C303: 更新任务 API
+- [x] TASK-C303: 更新任务 API
   - 文件：`apps/api/src/routes/tasks.ts`
   - 测试：`apps/api/src/routes/tasks.test.ts`
   - 验收：
@@ -170,7 +170,7 @@
     - 信息更新
     - 返回更新后数据
 
-- [ ] TASK-C304: 删除任务 API
+- [x] TASK-C304: 删除任务 API
   - 文件：`apps/api/src/routes/tasks.ts`
   - 测试：`apps/api/src/routes/tasks.test.ts`
   - 验收：
@@ -179,14 +179,14 @@
 
 ### C4: 打卡 API
 
-- [ ] TASK-C401: 获取打卡记录 API
+- [x] TASK-C401: 获取打卡记录 API
   - 文件：`apps/api/src/routes/attendance.ts`
   - 测试：`apps/api/src/routes/attendance.test.ts`
   - 验收：
     - 日期范围查询
     - 时区转换正确
 
-- [ ] TASK-C402: 打卡统计 API
+- [x] TASK-C402: 打卡统计 API
   - 文件：`apps/api/src/routes/attendance.ts`
   - 测试：`apps/api/src/routes/attendance.test.ts`
   - 验收：
@@ -205,7 +205,7 @@
     - React 插件配置
     - Vitest 配置
 
-- [ ] TASK-D102: 配置 React Router
+- [x] TASK-D102: 配置 React Router
   - 文件：`apps/web/src/App.tsx`
   - 测试：`apps/web/src/App.test.tsx`
   - 验收：
@@ -214,7 +214,7 @@
 
 ### D2: 登录页面
 
-- [ ] TASK-D201: LoginForm 组件
+- [x] TASK-D201: LoginForm 组件
   - 文件：`apps/web/src/components/LoginForm.tsx`
   - 测试：`apps/web/src/components/LoginForm.test.tsx`
   - 验收：
@@ -224,7 +224,7 @@
     - 密码长度校验
     - 提交按钮禁用状态
 
-- [ ] TASK-D202: LoginPage 页面
+- [x] TASK-D202: LoginPage 页面
   - 文件：`apps/web/src/pages/LoginPage.tsx`
   - 测试：`apps/web/src/pages/LoginPage.test.tsx`
   - 验收：
@@ -234,7 +234,7 @@
 
 ### D3: 任务页面
 
-- [ ] TASK-D301: TaskForm 组件
+- [x] TASK-D301: TaskForm 组件
   - 文件：`apps/web/src/components/TaskForm.tsx`
   - 测试：`apps/web/src/components/TaskForm.test.tsx`
   - 验收：
@@ -242,7 +242,7 @@
     - 日期选择
     - 提交禁用状态
 
-- [ ] TASK-D302: TaskList 组件
+- [x] TASK-D302: TaskList 组件
   - 文件：`apps/web/src/components/TaskList.tsx`
   - 测试：`apps/web/src/components/TaskList.test.tsx`
   - 验收：
@@ -250,7 +250,7 @@
     - 状态显示
     - 删除确认
 
-- [ ] TASK-D303: TasksPage 页面
+- [x] TASK-D303: TasksPage 页面
   - 文件：`apps/web/src/pages/TasksPage.tsx`
   - 测试：`apps/web/src/pages/TasksPage.test.tsx`
   - 验收：
@@ -261,7 +261,7 @@
 
 ### D4: 打卡页面
 
-- [ ] TASK-D401: AttendanceList 组件
+- [x] TASK-D401: AttendanceList 组件
   - 文件：`apps/web/src/components/AttendanceList.tsx`
   - 测试：`apps/web/src/components/AttendanceList.test.tsx`
   - 验收：
@@ -269,7 +269,7 @@
     - 时区转换显示（Asia/Tokyo）
     - 日期格式化
 
-- [ ] TASK-D402: AttendancePage 页面
+- [x] TASK-D402: AttendancePage 页面
   - 文件：`apps/web/src/pages/AttendancePage.tsx`
   - 测试：`apps/web/src/pages/AttendancePage.test.tsx`
   - 验收：

@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "npm run dev -w apps/web & npm run dev -w apps/api",
     "build": "npm run build -w apps/web && npm run build -w apps/api",
-    "test": "npm run test -w apps/web && npm run test -w apps/api",
+    "test": "npm run test -w apps/web && npm run test -w apps/api && npm run test -w @ai-harness/domain && npm run test -w @ai-harness/infrastructure",
     "test:watch": "npm run test:watch -w apps/web & npm run test:watch -w apps/api",
     "test:e2e": "npm run test:e2e -w apps/web",
     "lint": "eslint \"apps/web/src/**/*.{ts,tsx}\" \"apps/api/src/**/*.ts\" --max-warnings 0",
     "format": "prettier --write \"apps/**/src/**/*.{ts,tsx}\" \"packages/**/src/**/*.{ts,tsx}\"",
-    "typecheck": "npm run typecheck -w apps/web && npm run typecheck -w apps/api",
+    "typecheck": "npm run typecheck -w apps/web && npm run typecheck -w apps/api && npm run typecheck -w @ai-harness/domain && npm run typecheck -w @ai-harness/infrastructure",
     "doctor": "npm run doctor -w apps/web",
     "db:migrate": "npm run db:migrate -w apps/api",
     "db:seed": "npm run db:seed -w apps/api"
