@@ -1,5 +1,21 @@
 # 设计文档
 
+> **版本**：0.2.0（对齐 PRD 0.2.0 / `user-stories.md` 2026-07-21）  
+> **状态**：已确认  
+> **输入**：[`prd.md`](prd.md) | [`user-stories.md`](user-stories.md) | [`requirements-register.md`](requirements-register.md)
+
+## 规格对齐摘要
+
+| 项 | 本期设计 |
+|----|----------|
+| 打刻 | **只读**：`GET /api/attendance`、`GET /api/attendance/statistics`；数据由 **seed** 初始化（BR-010） |
+| 打刻不做 | `POST /api/attendance` 出勤/退勤 — **后续迭代**（见 PRD §1.2） |
+| 任务状态机 | BR-007～009；领域层 `Task` 实体强制执行；非法迁移 → 400 `INVALID_STATE_TRANSITION` |
+| 认证 | JWT；未登录访问 `/api/*`（除 login/health）→ 401；前端路由守卫（US-003） |
+| 密码 | bcrypt `SALT_ROUNDS=10`；最少 6 字符（BR-002） |
+
+---
+
 ## 系统架构
 
 ### 分层架构
@@ -117,6 +133,60 @@ export const attendanceRecords = pgTable('attendance_records', {
 }));
 ```
 
+## 领域规则
+
+### 任务状态机（BR-007～BR-009）
+
+与 PRD §4.1、`user-stories.md` US-012a～e 一致：
+
+```
+todo ──→ in_progress ──→ done
+  ↑            │
+  └────────────┘（in_progress → todo 可回退）
+```
+
+| 迁移 | 允许 |
+|------|------|
+| `todo` → `in_progress` | ✅ |
+| `in_progress` → `done` | ✅ |
+| `in_progress` → `todo` | ✅ |
+| `todo` → `done` | ❌ |
+| `done` → 任意 | ❌ |
+
+实现位置：`packages/domain/entities/task.ts` — `Task.transitionTo(nextStatus)` 抛 `InvalidStateTransitionError`。
+
+```typescript
+// packages/domain/entities/task.ts（示意）
+const VALID_TRANSITIONS: Record<TaskStatus, TaskStatus[]> = {
+  todo: ['in_progress'],
+  in_progress: ['done', 'todo'],
+  done: [],
+};
+
+function canTransition(from: TaskStatus, to: TaskStatus): boolean {
+  return VALID_TRANSITIONS[from]?.includes(to) ?? false;
+}
+```
+
+`TaskService.updateTask` 在 PATCH `status` 时调用领域方法；API 层映射为 400：
+
+```typescript
+// PATCH /api/tasks/:id 非法状态
+Response (400):
+{
+  "error": "INVALID_STATE_TRANSITION",
+  "message": "無効な状態遷移です"
+}
+```
+
+标题/说明更新不改变状态时，任意非 `done` 锁定场景下均可更新（`done` 仅禁止状态变更，内容是否可改由实现定——**本期**：`done` 任务仅可读，PATCH 非 status 字段亦拒绝，与 BR-009 一致）。
+
+### 打刻数据（BR-010）
+
+- 用户 **不能** 通过 API/UI 创建打刻；`AttendanceService` 仅 `list`、`getStatistics`（读路径）。
+- 示例记录由 `packages/infrastructure/db/seed.ts` 插入，供 US-020/021 验收。
+- 跨日工时：`work_date` 取**出勤时** Asia/Tokyo 日历日（US-021 边界）。
+
 ## API 设计
 
 ### 认证 API
@@ -194,9 +264,18 @@ Response (200):
 
 // DELETE /api/tasks/:id
 Response (204): No Content
+
+// PATCH /api/tasks/:id — 非法状态迁移
+Response (400):
+{
+  "error": "INVALID_STATE_TRANSITION",
+  "message": "無効な状態遷移です"
+}
 ```
 
-### 打卡 API
+### 打卡 API（本期只读）
+
+> **范围**：PRD F-007/F-008；**不含** `POST` 打刻。Wiki `打卡API.md` 中 POST 段落标为后续迭代。
 
 ```typescript
 // GET /api/attendance?startDate=2025-01-01&endDate=2025-01-31
@@ -224,6 +303,15 @@ Response (200):
   "totalHours": 160.5
 }
 ```
+
+### 前端路由与鉴权（US-003）
+
+| 路径 | 鉴权 |
+|------|------|
+| `/login` | 公开 |
+| `/tasks`, `/attendance`, `/dashboard` 等 | 需登录；未登录 → `Navigate` 至 `/login` |
+
+React Router 守卫 + API `Authorization: Bearer`；401 时清除 token 并跳转登录。
 
 ## 时区处理策略
 
@@ -256,15 +344,16 @@ const displayTime = new Date(apiResponse.checkInTime).toLocaleString('ja-JP', {
 
 ### Zod Schema 时区处理
 
+读路径查询参数示例（打刻一覧）：
+
 ```typescript
-const attendanceSchema = z.object({
-  checkInTime: z.string()
-    .datetime({ message: '日時の形式が無効です' })
-    .transform((val) => new Date(val)),
-  workDate: z.string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, { message: '日付の形式が無効です' }),
+const attendanceQuerySchema = z.object({
+  startDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  endDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });
 ```
+
+> `POST` 打刻请求体验证（`attendanceSchema`）留待后续迭代，本期不实现。
 
 ## 错误处理
 
@@ -288,6 +377,7 @@ enum ErrorCode {
   
   // 验证错误
   VALIDATION_ERROR = 'VALIDATION_ERROR',
+  INVALID_STATE_TRANSITION = 'INVALID_STATE_TRANSITION',
   
   // 资源错误
   NOT_FOUND = 'NOT_FOUND',
