@@ -5,7 +5,7 @@
 > **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.cursor/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-21  
-**当前焦点步骤**：**⑪ Git 提交推送** — ⑩ E2E 主路径已通过，可整理提交摘要
+**当前焦点步骤**：**⑪ Git 提交推送** — 本地提交已生成；待推送远程
 
 ---
 
@@ -35,7 +35,7 @@
 | ⑧ | 执行开发 | `done` | TASK | 代码 + 测试证据 | Auth ✅；Task CRUD API ✅；Attendance 只读 API ✅；前端最小链路 ✅ |
 | ⑨ | 集成测试 | `done` | ⑧ | `verification/verification-result.md` | 真 DB + 真 API 集成结果已回写；浏览器全链路留到⑩ |
 | ⑩ | E2E 测试 | `done` | ⑨ | `apps/web/e2e/`、`apps/web/playwright-report/` | Playwright 主路径 2 passed；真浏览器 + 真 API + 真 DB 已验证 |
-| ⑪ | Git 提交推送 | `not_started` | ⑩ | commit / MR | 需用户明确授权 |
+| ⑪ | Git 提交推送 | `in_progress` | ⑩ | commit `d289087` | 本地 commit 已完成；待 push 到 `origin/main` |
 | ⑫ | 测试环境部署 | `in_progress` | ⑪ | `deploy-log.md` + CI Artifact | **deploy-test job 已就绪**；真实 URL 待团队 hosting |
 
 ---
