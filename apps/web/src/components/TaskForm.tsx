@@ -37,21 +37,32 @@ export function TaskForm({ onCreate }: TaskFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className="form-grid" onSubmit={handleSubmit}>
+      <label className="field-label">
         タイトル
-        <input value={title} onChange={(event) => setTitle(event.target.value)} />
+        <input className="field" value={title} onChange={(event) => setTitle(event.target.value)} />
       </label>
-      <label>
+      <label className="field-label">
         説明
-        <textarea value={description} onChange={(event) => setDescription(event.target.value)} />
+        <textarea
+          className="field textarea"
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        />
       </label>
-      <label>
+      <label className="field-label">
         期限
-        <input type="date" value={dueDate} onChange={(event) => setDueDate(event.target.value)} />
+        <input
+          className="field"
+          type="date"
+          value={dueDate}
+          onChange={(event) => setDueDate(event.target.value)}
+        />
       </label>
-      {errorMessage ? <p role="alert">{errorMessage}</p> : null}
-      <button type="submit" disabled={isSubmitting}>{isSubmitting ? '保存中...' : 'タスクを追加'}</button>
+      {errorMessage ? <p role="alert" className="alert">{errorMessage}</p> : null}
+      <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
+        {isSubmitting ? '保存中...' : 'タスクを追加'}
+      </button>
     </form>
   );
 }

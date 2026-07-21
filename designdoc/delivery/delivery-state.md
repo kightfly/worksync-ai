@@ -5,7 +5,7 @@
 > **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.cursor/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-21  
-**当前焦点步骤**：**⑪ Git 提交推送** — 本地提交已生成；待推送远程
+**当前焦点步骤**：**闭环后补全** — 构建修复 + E2E 截图已提交；新需求从 ② 或 ⑦ 重新开一轮
 
 ---
 
@@ -35,8 +35,8 @@
 | ⑧ | 执行开发 | `done` | TASK | 代码 + 测试证据 | Auth ✅；Task CRUD API ✅；Attendance 只读 API ✅；前端最小链路 ✅ |
 | ⑨ | 集成测试 | `done` | ⑧ | `verification/verification-result.md` | 真 DB + 真 API 集成结果已回写；浏览器全链路留到⑩ |
 | ⑩ | E2E 测试 | `done` | ⑨ | `apps/web/e2e/`、`apps/web/playwright-report/` | Playwright 主路径 2 passed；真浏览器 + 真 API + 真 DB 已验证 |
-| ⑪ | Git 提交推送 | `in_progress` | ⑩ | commit `d289087` | 本地 commit 已完成；待 push 到 `origin/main` |
-| ⑫ | 测试环境部署 | `in_progress` | ⑪ | `deploy-log.md` + CI Artifact | **deploy-test job 已就绪**；真实 URL 待团队 hosting |
+| ⑪ | Git 提交推送 | `done` | ⑩ | commit `d289087`、`3f489fd` | 用户已确认远程 push 完成；测试摘要已绑定 commit |
+| ⑫ | 测试环境部署 | `done` | ⑪ | `deploy-log.md` + Artifact 本地等价部署 | 生产构建修复（domain/infrastructure dist）；本地 URL 5173/3100；DEPLOY_SMOKE E2E 2 passed |
 
 ---
 
@@ -77,3 +77,7 @@
 ### D. Wiki
 
 → ✅ 全量完成（见 `wiki-audit-status.md`）
+
+### E. GienCoder 分步任务
+
+→ 复制创建任务用：[`4p12s-work-tasks.md`](./4p12s-work-tasks.md)（十二步标题 + 用户故事描述）

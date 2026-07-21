@@ -21,7 +21,9 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  webServer: [
+  webServer: process.env.DEPLOY_SMOKE
+    ? undefined
+    : [
     {
       command: 'cd /d ../.. && set "PORT=' + apiPort + '" && npm run dev -w apps/api',
       url: `${apiBaseURL}/health`,

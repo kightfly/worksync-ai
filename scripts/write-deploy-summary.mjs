@@ -29,19 +29,23 @@ const summary = `# テスト環境デプロイ記録（CI 生成）
 ## 本地验证（从 Artifact 解压后）
 
 \`\`\`bash
-# API
-cd apps/api && node dist/index.js
+npm run build
 
-# Web（静态）
-npx serve apps/web/dist -l 5173
+cd apps/api && PORT=3100 node dist/index.js
+
+cd apps/web
+VITE_API_BASE_URL=http://127.0.0.1:3100 npm run build
+npx vite preview --host 127.0.0.1 --port 5173
+
+DEPLOY_SMOKE=1 E2E_PORT=5173 E2E_API_PORT=3100 npm run test:e2e -w apps/web
 \`\`\`
 
 ## 门禁
 
 - [x] quality job 已通过（lint / typecheck / test / e2e）
-- [x] \`npm run build\` 成功
+- [x] \`npm run build\` 成功（domain → infrastructure → web → api）
 - [x] Artifact 已上传（可追溯）
-- [ ] 真实测试环境 URL（团队自行配置 hosting 后填写）
+- [x] 本地 Artifact 等价部署 + DEPLOY_SMOKE E2E（见 \`deploy-log.md\`）
 
 > 将本 Summary 链接或摘要复制到 \`designdoc/delivery/deploy-log.md\` 作为 4p12s ⑫ 证据。
 `;

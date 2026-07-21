@@ -224,7 +224,7 @@ npm run db:seed
 - infrastructure：5 passed
 - api：23 passed
 - web：3 passed
-- Playwright E2E：2 passed
+- Playwright E2E：3 passed（smoke 2 + 截图采集 1）
 - 全仓测试：44 passed
 
 ### 4.5 演示数据
@@ -240,9 +240,9 @@ npm run db:seed
 
 为避免“案例包装过度”，当前仍未完成的内容应明确写出：
 
-- ⑪ Git 提交推送记录
-- ⑫ 测试环境部署证据
-- 对外可展示的 E2E 截图素材可继续补充
+- ⑪ Git 提交推送记录 ✅（commit `d289087`、`3f489fd`）
+- ⑫ 测试环境部署证据 ✅（见 `deploy-log.md`；本地 Artifact 等价部署 + DEPLOY_SMOKE E2E）
+- E2E 主路径截图 ✅（见附录 B `designdoc/delivery/assets/e2e/`）
 
 ## 05 效率提升与价值收益
 
@@ -378,13 +378,26 @@ npm run db:seed
 - **证据**：`npm run test:e2e -w apps/web` → 2 passed
 - **案例要点**：不是把“页面能打开”当 E2E，而是把真浏览器、真 API、真 DB 串起来，形成可交付门禁证据
 
+### 2026-07-21 | 闭环后补全 · 构建修复 + E2E 截图
+
+- **GienCoder 操作**：修复 workspace 生产 build；统一登录后默认进ダッシュボード；采集 E2E 主路径截图写入案例附录
+- **交付物**：`packages/domain|infrastructure` dist 构建；`apps/web/e2e/capture-screenshots.spec.ts`；`designdoc/delivery/assets/e2e/*.png`
+- **证据**：`npm run build` ✅；`npm run test` → 44 passed；`npm run test:e2e` → 3 passed
+- **案例要点**：闭环后的 commit 仍须带测试证据；E2E 截图落盘到仓库相对路径，便于分享文档直接引用
+
 ## 附录 B：截图索引
 
 | 截图 | 文件 | 用途 |
 |------|------|------|
 | GienCoder 分享入口示意 | `C:/Users/P0001219/.cursor/projects/e-IdeaProjects-GienHarness/assets/c__Users_P0001219_AppData_Roaming_Cursor_User_workspaceStorage_c0abae760270d0864030bb31ceb4140b_images_image-a063ce0d-a77c-4b71-85f4-c0f5b6909f7e.png` | 说明案例分享内容模板（使用场景 / 使用方法 / 操作过程 / 达成结果 / 价值收益） |
 | Harness L1 操作截图 | `C:/Users/P0001219/.cursor/projects/e-IdeaProjects-GienHarness/assets/c__Users_P0001219_AppData_Roaming_Cursor_User_workspaceStorage_c0abae760270d0864030bb31ceb4140b_images_image-f6b3897d-e2c2-469d-b7b6-e865d7a787a9.png` | 说明 `WIKI_DIR`、`/harness-init-l1`、Harness 阶段条与真实报错重试场景 |
-| 测试证据截图 | 待补充 | 建议后续补 `npm run test` / `db:migrate` / `db:seed` 成功画面 |
+| E2E-01 ログイン | [`assets/e2e/01-login.png`](./assets/e2e/01-login.png) | 登录页（未认证访问保护路由前的入口） |
+| E2E-02 ダッシュボード | [`assets/e2e/02-dashboard.png`](./assets/e2e/02-dashboard.png) | 登录后默认着陆页与侧边栏导航 |
+| E2E-03 タスク一覧 | [`assets/e2e/03-tasks-list.png`](./assets/e2e/03-tasks-list.png) | 表格式任务管理一览 |
+| E2E-04 タスク作成 | [`assets/e2e/04-task-created.png`](./assets/e2e/04-task-created.png) | 新規タスク创建后列表更新 |
+| E2E-05 状態更新 | [`assets/e2e/05-task-done.png`](./assets/e2e/05-task-done.png) | 任务状态 todo → in_progress → done |
+| E2E-06 打刻一覧 | [`assets/e2e/06-attendance.png`](./assets/e2e/06-attendance.png) | 打刻只读页与日次集計 |
+| E2E-07 ログアウト | [`assets/e2e/07-logout.png`](./assets/e2e/07-logout.png) | 登出后回到登录页 |
 
 ## 后续维护约定
 

@@ -45,17 +45,35 @@ export function AttendancePage({ token, onUnauthorized }: AttendancePageProps) {
 
   return (
     <main>
-      <h1>打刻一覧</h1>
-      <label>
-        開始日
-        <input type="date" value={startDate} onChange={(event) => setStartDate(event.target.value)} />
-      </label>
-      <label>
-        終了日
-        <input type="date" value={endDate} onChange={(event) => setEndDate(event.target.value)} />
-      </label>
-      {errorMessage ? <p role="alert">{errorMessage}</p> : null}
-      {isLoading ? <p>読み込み中...</p> : <AttendanceList records={records} statistics={statistics} />}
+      <h1 className="hero-title">打刻一覧</h1>
+      <section className="card form-grid-3">
+        <label className="field-label">
+          開始日
+          <input
+            className="field"
+            type="date"
+            value={startDate}
+            onChange={(event) => setStartDate(event.target.value)}
+          />
+        </label>
+        <label className="field-label">
+          終了日
+          <input
+            className="field"
+            type="date"
+            value={endDate}
+            onChange={(event) => setEndDate(event.target.value)}
+          />
+        </label>
+      </section>
+      {errorMessage ? <p role="alert" className="alert">{errorMessage}</p> : null}
+      {isLoading ? (
+        <p className="muted">読み込み中...</p>
+      ) : (
+        <section className="card">
+          <AttendanceList records={records} statistics={statistics} />
+        </section>
+      )}
     </main>
   );
 }

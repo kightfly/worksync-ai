@@ -29,22 +29,27 @@ export function LoginForm({ onSubmit, errorMessage, isSubmitting }: LoginFormPro
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label>
+    <form className="form-grid" onSubmit={handleSubmit(onSubmit)}>
+      <label className="field-label">
         メールアドレス
-        <input type="email" autoComplete="username" {...register('email')} />
+        <input className="field" type="email" autoComplete="username" {...register('email')} />
       </label>
-      {errors.email ? <p role="alert">{errors.email.message}</p> : null}
+      {errors.email ? <p role="alert" className="alert">{errors.email.message}</p> : null}
 
-      <label>
+      <label className="field-label">
         パスワード
-        <input type="password" autoComplete="current-password" {...register('password')} />
+        <input
+          className="field"
+          type="password"
+          autoComplete="current-password"
+          {...register('password')}
+        />
       </label>
-      {errors.password ? <p role="alert">{errors.password.message}</p> : null}
+      {errors.password ? <p role="alert" className="alert">{errors.password.message}</p> : null}
 
-      {errorMessage ? <p role="alert">{errorMessage}</p> : null}
+      {errorMessage ? <p role="alert" className="alert">{errorMessage}</p> : null}
 
-      <button type="submit" disabled={isSubmitting}>
+      <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'ログイン中...' : 'ログイン'}
       </button>
     </form>

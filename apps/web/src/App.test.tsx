@@ -22,7 +22,7 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'ログイン' })).toBeTruthy();
   });
 
-  it('ログイン済みならタスク一覧を取得する', async () => {
+  it('ログイン済みならダッシュボードを表示する', async () => {
     localStorage.setItem('ai-harness-token', 'token');
     localStorage.setItem(
       'ai-harness-user',
@@ -40,7 +40,7 @@ describe('App', () => {
     render(<App />);
 
     await waitFor(() => {
-      expect(screen.getByRole('heading', { name: 'タスク一覧' })).toBeTruthy();
+      expect(screen.getByRole('heading', { name: 'ダッシュボード' })).toBeTruthy();
     });
     expect(screen.getByText('タスクはありません')).toBeTruthy();
   });
