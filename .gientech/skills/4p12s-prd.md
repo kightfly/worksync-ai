@@ -47,4 +47,4 @@
 
 ## 下一步
 
-PRD 确认 → `skills/4p12s-user-stories.md`
+PRD 确认 → `.gientech/skills/4p12s-user-stories.md`

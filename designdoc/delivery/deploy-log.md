@@ -1,6 +1,6 @@
 # 部署日志（4p12s ⑫）
 
-> **Skill**：`skills/4p12s-deployment-execution.md`  
+> **Skill**：`.gientech/skills/4p12s-deployment-execution.md`  
 > **最近更新**：2026-07-21  
 > **关联 commit**：`3f489fd`（⑪ 推送基线）+ 本轮构建修复（domain/infrastructure 编译产物）
 

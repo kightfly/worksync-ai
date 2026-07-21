@@ -60,7 +60,7 @@ const rows = await db.select().from(tasksTable).where(
 );
 ```
 
-插入 / 更新 / 删除 / JOIN 模式见 `skills/database.md`；**当前仓库无上述运行时代码**。
+插入 / 更新 / 删除 / JOIN 模式见 `.gientech/skills/database.md`；**当前仓库无上述运行时代码**。
 
 ## 迁移管理
 
@@ -92,7 +92,7 @@ type NewUser = typeof users.$inferInsert;
 
 ## N+1 防护
 
-遵循项目规范，禁止 N+1 查询（`.cursor/rules`、[`skills/database.md`](../../../skills/database.md)）：
+遵循项目规范，禁止 N+1 查询（[`.gientech/rules/`](../../rules/)、[`.gientech/skills/database.md`](../../skills/database.md)）：
 
 ```typescript
 // ❌ N+1

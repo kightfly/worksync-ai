@@ -6,7 +6,7 @@
 
 ## 在本仓库的位置
 
-Superpower **第 5 步**；**4p12s ⑧** 的核心纪律。详细实践见 **`skills/tdd.md`** 与 `.cursor/rules/tdd.mdc`。
+Superpower **第 5 步**；**4p12s ⑧** 的核心纪律。详细实践见 **`.gientech/skills/tdd.md`** 与 `.gientech/rules/tdd.mdc`。
 
 ## 触发条件
 
@@ -15,8 +15,8 @@ Superpower **第 5 步**；**4p12s ⑧** 的核心纪律。详细实践见 **`sk
 
 ## 必读输入
 
-1. `skills/tdd.md`（完整循环与项目约定）
-2. `.cursor/rules/tdd.mdc`
+1. `.gientech/skills/tdd.md`（完整循环与项目约定）
+2. `.gientech/rules/tdd.mdc`
 3. 当前 TASK 的失败测试意图与验收
 4. `4p12s-implementation-execution.md`（含 5 次红灯升级）
 
@@ -45,7 +45,7 @@ Superpower **第 5 步**；**4p12s ⑧** 的核心纪律。详细实践见 **`sk
 
 ## 详细规范
 
-→ 打开并遵循 **`skills/tdd.md`**。
+→ 打开并遵循 **`.gientech/skills/tdd.md`**。
 
 ## 下一步
 

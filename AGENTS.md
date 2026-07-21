@@ -23,8 +23,8 @@
 1. 本文档 `AGENTS.md`
 2. `designdoc/delivery/delivery-state.md` — 十二步状态（当前做什么、阻塞项）
 3. `designdoc/delivery/harness-alignment-status.md` — Harness 对齐进度（下一步补齐什么）
-4. 当前步骤对应的 `skills/*.md`
-5. `.cursor/rules/*.mdc`（尤其 `4p12s-gates.mdc`、`tdd.mdc`）
+4. 当前步骤对应的 `.gientech/skills/*.md`
+5. `.gientech/rules/*.mdc`（尤其 `4p12s-gates.mdc`、`tdd.mdc`）
 
 **原则：不能靠对话记忆推进，必须文件化。** 状态与交付物以仓库内 Markdown 为准。
 
@@ -54,7 +54,7 @@ GienSpec（讲清楚要做什么、怎么拆）
 
 ## 四阶十二步（主流程）
 
-| 阶段 | 步骤 | Skill（仓库根 `skills/`） | 主要交付物 |
+| 阶段 | 步骤 | Skill（`.gientech/skills/`） | 主要交付物 |
 |------|------|---------------------------|------------|
 | **一·准备** | ① 流程初始化 | `4p12s-delivery-orchestrator.md` | `delivery-state.md`、Harness/Wiki、测试护栏 |
 | | ② 业务需求确认 | `4p12s-requirements.md`（可叠加 `gienspec-specify` / `clarify`） | `requirements-register.md` |
@@ -84,7 +84,7 @@ GienSpec（讲清楚要做什么、怎么拆）
 - ⑪ 需求/设计/开发/测试未全过 → **不推送宣称完成**
 - ⑫ 必须有流水线/部署记录与可访问证据
 
-完整检查表见 `.cursor/rules/4p12s-gates.mdc`。
+完整检查表见 `.gientech/rules/4p12s-gates.mdc`。
 
 ### ⑧ 执行时的 Superpower 纪律（最小集）
 
@@ -121,12 +121,16 @@ brainstorming（必要时）
 │   │   └── tasks/TASK-xxx.md        # 单任务
 │   ├── verification/                # ⑥⑨⑩ 验证产物
 │   └── templates/                   # 交付物空白模板
-├── skills/                          # 技能文件（仓库根）
-├── .cursor/rules/                   # Cursor 规则
-├── .gientech/wiki/                  # 知识库 Wiki
+├── .gientech/
+│   ├── wiki/                        # 知识库 Wiki（WIKI_DIR）
+│   ├── skills/                      # 4p12s + GienSpec + Superpower Skills
+│   ├── rules/                       # 工程规则（TDD、门禁、安全、时区、命名）
+│   └── spec/                        # GienSpec 产物（若有）
 ├── .github/workflows/ci.yml         # CI：typecheck / test / e2e
 └── package.json
 ```
+
+> **Harness 入口约定**：Skills / Rules / Wiki 统一放在 `.gientech/`，供 **GienCoder** 使用；不以 IDE 私有目录为真相源。
 
 ## 模块边界规则
 
@@ -200,18 +204,18 @@ npm run test
 
 | 文件 | 状态 |
 |------|------|
-| `skills/4p12s-delivery-orchestrator.md` | ✅ |
-| `skills/4p12s-requirements.md` | ✅ |
-| `skills/4p12s-prd.md` | ✅ |
-| `skills/4p12s-user-stories.md` | ✅ |
-| `skills/4p12s-technical-design.md` | ✅ |
-| `skills/4p12s-verification-plan.md` | ✅ |
-| `skills/4p12s-implementation-tasks.md` | ✅ |
-| `skills/4p12s-implementation-execution.md` | ✅ |
-| `skills/4p12s-integration-test.md` | ✅ |
-| `skills/4p12s-e2e-test.md` | ✅ |
-| `skills/4p12s-git-push.md` | ✅ |
-| `skills/4p12s-deployment-execution.md` | ✅ |
+| `.gientech/skills/4p12s-delivery-orchestrator.md` | ✅ |
+| `.gientech/skills/4p12s-requirements.md` | ✅ |
+| `.gientech/skills/4p12s-prd.md` | ✅ |
+| `.gientech/skills/4p12s-user-stories.md` | ✅ |
+| `.gientech/skills/4p12s-technical-design.md` | ✅ |
+| `.gientech/skills/4p12s-verification-plan.md` | ✅ |
+| `.gientech/skills/4p12s-implementation-tasks.md` | ✅ |
+| `.gientech/skills/4p12s-implementation-execution.md` | ✅ |
+| `.gientech/skills/4p12s-integration-test.md` | ✅ |
+| `.gientech/skills/4p12s-e2e-test.md` | ✅ |
+| `.gientech/skills/4p12s-git-push.md` | ✅ |
+| `.gientech/skills/4p12s-deployment-execution.md` | ✅ |
 
 产物模板：`designdoc/templates/*.template.md`
 
@@ -219,11 +223,11 @@ npm run test
 
 | 文件 | 状态 | 用途 |
 |------|------|------|
-| `skills/gienspec-specify.md` | ✅ | 想法 → 可讨论规格 |
-| `skills/gienspec-clarify.md` | ✅ | 澄清模糊点 |
-| `skills/gienspec-plan.md` | ✅ | 实现计划 |
-| `skills/gienspec-tasks.md` | ✅ | 任务拆解 |
-| `skills/gienspec-analyze.md` | ✅ | 规格/计划/任务一致性 |
+| `.gientech/skills/gienspec-specify.md` | ✅ | 想法 → 可讨论规格 |
+| `.gientech/skills/gienspec-clarify.md` | ✅ | 澄清模糊点 |
+| `.gientech/skills/gienspec-plan.md` | ✅ | 实现计划 |
+| `.gientech/skills/gienspec-tasks.md` | ✅ | 任务拆解 |
+| `.gientech/skills/gienspec-analyze.md` | ✅ | 规格/计划/任务一致性 |
 
 宪章与 init 由 `AGENTS.md` + `4p12s-delivery-orchestrator` 承担（最小集不单独建 skill）。
 
@@ -231,27 +235,27 @@ npm run test
 
 | 文件 | 状态 | 用途 |
 |------|------|------|
-| `skills/brainstorming.md` | ✅ | 澄清边界与完成标准 |
-| `skills/writing-plans.md` | ✅ | 小步骤计划 |
-| `skills/test-driven-development.md` | ✅ | TDD 入口（详规 → `tdd.md`） |
-| `skills/systematic-debugging.md` | ✅ | 根因调试 |
-| `skills/verification-before-completion.md` | ✅ | 完成前证据检查 |
+| `.gientech/skills/brainstorming.md` | ✅ | 澄清边界与完成标准 |
+| `.gientech/skills/writing-plans.md` | ✅ | 小步骤计划 |
+| `.gientech/skills/test-driven-development.md` | ✅ | TDD 入口（详规 → `tdd.md`） |
+| `.gientech/skills/systematic-debugging.md` | ✅ | 根因调试 |
+| `.gientech/skills/verification-before-completion.md` | ✅ | 完成前证据检查 |
 
 ### 横切角色技能（保留）
 
-- `skills/principal-engineer.md` — 质量与流程总控
-- `skills/architect.md` — 架构边界（挂 ⑤）
-- `skills/tdd.md` — TDD（挂 ⑧；E2E 为交付门禁，不可缺）
-- `skills/react-doctor.md` — 前端质量（挂 ⑧）
-- `skills/database.md` — 数据与 SQL（挂 ⑤/⑧）
+- `.gientech/skills/principal-engineer.md` — 质量与流程总控
+- `.gientech/skills/architect.md` — 架构边界（挂 ⑤）
+- `.gientech/skills/tdd.md` — TDD（挂 ⑧；E2E 为交付门禁，不可缺）
+- `.gientech/skills/react-doctor.md` — 前端质量（挂 ⑧）
+- `.gientech/skills/database.md` — 数据与 SQL（挂 ⑤/⑧）
 
 ## 规则文件索引
 
-- `.cursor/rules/tdd.mdc` — TDD 强制
-- `.cursor/rules/naming.mdc` — 命名规范
-- `.cursor/rules/security.mdc` — 安全规范
-- `.cursor/rules/timezone.mdc` — 时区处理
-- `.cursor/rules/4p12s-gates.mdc` — 十二步门禁
+- `.gientech/rules/tdd.mdc` — TDD 强制
+- `.gientech/rules/naming.mdc` — 命名规范
+- `.gientech/rules/security.mdc` — 安全规范
+- `.gientech/rules/timezone.mdc` — 时区处理
+- `.gientech/rules/4p12s-gates.mdc` — 十二步门禁
 
 ## 语言约定
 

@@ -51,4 +51,4 @@
 
 ## 下一步
 
-任务确认 → `skills/4p12s-implementation-execution.md`
+任务确认 → `.gientech/skills/4p12s-implementation-execution.md`

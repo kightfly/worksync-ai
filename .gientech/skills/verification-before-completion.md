@@ -6,7 +6,7 @@
 
 ## 在本仓库的位置
 
-Superpower 收尾纪律；对应 **4p12s ⑧ 结束** 与进入 ⑨/⑩ 前。与 `.cursor/rules/4p12s-gates.mdc` 一致。
+Superpower 收尾纪律；对应 **4p12s ⑧ 结束** 与进入 ⑨/⑩ 前。与 `.gientech/rules/4p12s-gates.mdc` 一致。
 
 ## 触发条件
 

@@ -1,7 +1,7 @@
 # TASK-XXX（模板）
 
 > 复制到 `designdoc/specs/tasks/TASK-XXX.md`。  
-> Skill：`skills/4p12s-implementation-tasks.md` / `implementation-execution.md`
+> Skill：`.gientech/skills/4p12s-implementation-tasks.md` / `implementation-execution.md`
 
 ## 元信息
 

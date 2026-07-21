@@ -1,7 +1,7 @@
 # 部署日志（模板）
 
 > 复制为 `designdoc/delivery/deploy-log.md` 或按次追加章节。  
-> Skill：`skills/4p12s-deployment-execution.md`
+> Skill：`.gientech/skills/4p12s-deployment-execution.md`
 
 ## 元信息
 

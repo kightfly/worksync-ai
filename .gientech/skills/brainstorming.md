@@ -45,4 +45,4 @@ Superpower 7 步之 **第 1 步**；常用于 **4p12s ⑧** 开工前或修 Bug 
 
 ## 下一步
 
-`skills/writing-plans.md`
+`.gientech/skills/writing-plans.md`

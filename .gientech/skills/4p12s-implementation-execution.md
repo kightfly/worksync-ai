@@ -14,7 +14,7 @@
 
 1. 当前 `designdoc/specs/tasks/TASK-xxx.md`（或 `tasks.md` 中条目）
 2. 相关设计与验证计划条目
-3. `.cursor/rules/tdd.mdc`、`skills/tdd.md`
+3. `.gientech/rules/tdd.mdc`、`.gientech/skills/tdd.md`
 4. 横切：`react-doctor.md` / `database.md` / `security.mdc` / `timezone.mdc`
 
 ## Superpower 最小纪律（本步强制）
@@ -65,4 +65,4 @@
 
 ## 下一步
 
-计划内 TASK 均完成 → `skills/4p12s-integration-test.md`
+计划内 TASK 均完成 → `.gientech/skills/4p12s-integration-test.md`

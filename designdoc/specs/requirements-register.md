@@ -1,6 +1,6 @@
 # 需求登记表
 
-> Skill：`skills/4p12s-requirements.md`  
+> Skill：`.gientech/skills/4p12s-requirements.md`  
 > 由原 `requirements.md` 迁移（Phase 3）。过渡文件 `requirements.md` 仅作索引。
 
 ## 元信息

@@ -2,7 +2,7 @@
 
 > **用途**：四阶十二步的唯一进度真相源。每步更新「状态 / 输入 / 输出 / 阻塞项」。  
 > **维护者**：Agent 在门禁通过或受阻时必须回写；人可覆盖确认。  
-> **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.cursor/rules/4p12s-gates.mdc`
+> **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.gientech/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-21  
 **当前焦点步骤**：**闭环后补全** — 构建修复 + E2E 截图已提交；新需求从 ② 或 ⑦ 重新开一轮
@@ -46,7 +46,7 @@
 
 - [ ] 已读本表与 `harness-alignment-status.md`
 - [ ] 明确「只推进当前允许的步骤」，不跳过门禁
-- [ ] 执行步骤时打开对应 `skills/4p12s-*.md`
+- [ ] 执行步骤时打开对应 `.gientech/skills/4p12s-*.md`
 
 结束工作时：
 

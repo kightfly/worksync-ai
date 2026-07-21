@@ -17,8 +17,8 @@
 | [`designdoc/delivery/delivery-state.md`](../../designdoc/delivery/delivery-state.md) | 十二步进度真相源 |
 | [`designdoc/delivery/harness-alignment-status.md`](../../designdoc/delivery/harness-alignment-status.md) | Harness 方法论对齐状态 |
 | [`designdoc/delivery/wiki-audit-status.md`](../../designdoc/delivery/wiki-audit-status.md) | **Wiki 分步审查跟踪** |
-| [`skills/`](../../skills/) | 4p12s（12）+ GienSpec（5）+ Superpower（5）+ 横切技能 |
-| [`.cursor/rules/`](../../.cursor/rules/) | TDD、门禁、安全、时区、命名 |
+| [`.gientech/skills/`](../skills/) | 4p12s（12）+ GienSpec（5）+ Superpower（5）+ 横切技能 |
+| [`.gientech/rules/`](../rules/) | TDD、门禁、安全、时区、命名 |
 | [`学习资料.md`](../../学习资料.md) | 四阶十二步 / Superpower / GienSpec 方法论 |
 
 ---
@@ -65,7 +65,7 @@
 
 | 文档 | 说明 |
 |------|------|
-| [交付流程与 Skills](交付流程与Skills.md) | 4p12s + GienSpec + Superpower 与 `skills/` 映射 |
+| [交付流程与 Skills](交付流程与Skills.md) | 4p12s + GienSpec + Superpower 与 `.gientech/skills/` 映射 |
 | [designdoc 交付物指南](designdoc交付物指南.md) | `designdoc/` 路径、模板、十二步对照 |
 | [Harness 实践案例](../../designdoc/delivery/harness-practice-case.md) | 以 **GienCoder 开发助手** 为主线的案例内容、截图索引与价值总结 |
 | [Wiki 维护约定](Wiki维护约定.md) | 真相源优先级、状态标注、更新时机 |
@@ -98,7 +98,7 @@
 
 ### Agent 会话开场（推荐）
 
-1. [`AGENTS.md`](../../AGENTS.md) → 2. [`delivery-state.md`](../../designdoc/delivery/delivery-state.md) → 3. 当前步骤对应 [`skills/`](../../skills/) → 4. 本 Wiki 相关章节 → 5. [`.cursor/rules/`](../../.cursor/rules/)
+1. [`AGENTS.md`](../../AGENTS.md) → 2. [`delivery-state.md`](../../designdoc/delivery/delivery-state.md) → 3. 当前步骤对应 [`.gientech/skills/`](../skills/) → 4. 本 Wiki 相关章节 → 5. [`.gientech/rules/`](../rules/)
 
 复杂功能叠加顺序（见 `学习资料.md` §10）：
 
@@ -120,7 +120,7 @@ GienSpec（规格/计划/任务）
 
 ## 文档维护约定
 
-详见 [Wiki 维护约定](Wiki维护约定.md)。摘要：代码 > designdoc > AGENTS/skills > Wiki；状态用 ✅/🟡/📋/🔮。
+详见 [Wiki 维护约定](Wiki维护约定.md)。摘要：代码 > designdoc > AGENTS / `.gientech/rules` / `.gientech/skills` > Wiki；状态用 ✅/🟡/📋/🔮。
 
 ---
 

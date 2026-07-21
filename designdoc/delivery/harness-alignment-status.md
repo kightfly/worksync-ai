@@ -2,7 +2,7 @@
 
 > **用途**：跟踪「把本仓库 Agent/Skills/Rules 对齐到 `学习资料.md` 四阶十二步」的进度。  
 > **与 `delivery-state.md` 的区别**：本文件管 **方法论落地**；`delivery-state.md` 管 **产品功能十二步交付**。  
-> **约定范围**：4p12s 全链路 + Superpower/GienSpec **最小集**；Skills 继续放在仓库根 `skills/`。
+> **约定范围**：4p12s 全链路 + Superpower/GienSpec **最小集**；Skills / Rules 统一放在 `.gientech/skills/`、`.gientech/rules/`。
 
 **最近更新**：2026-07-20  
 **当前 Phase**：Phase 4 ✅ 完成 → **Harness 方法论对齐闭环**
@@ -13,9 +13,9 @@
 
 | Phase | 内容 | 状态 | 完成标准 |
 |-------|------|------|----------|
-| **0** | 范围约定 | ✅ | 4p12s + 最小集；`skills/` 根目录 |
+| **0** | 范围约定 | ✅ | 4p12s + 最小集；`.gientech/skills/` + `.gientech/rules/` |
 | **1** | Harness 入口 | ✅ | AGENTS 四阶十二步；delivery-state；rules |
-| **2** | 十二步 4p12s Skills | ✅ | 12 个 `skills/4p12s-*.md` + 模板 |
+| **2** | 十二步 4p12s Skills | ✅ | 12 个 `.gientech/skills/4p12s-*.md` + 模板 |
 | **3** | 工程护栏 | ✅ | Playwright、CI、tdd、规格拆分 |
 | **4** | GienSpec / Superpower 最小集 | ✅ | 5+5 skills + AGENTS 索引 |
 
@@ -25,19 +25,19 @@
 
 ### 新增文件 — GienSpec（5）
 
-- `skills/gienspec-specify.md`
-- `skills/gienspec-clarify.md`
-- `skills/gienspec-plan.md`
-- `skills/gienspec-tasks.md`
-- `skills/gienspec-analyze.md`
+- `.gientech/skills/gienspec-specify.md`
+- `.gientech/skills/gienspec-clarify.md`
+- `.gientech/skills/gienspec-plan.md`
+- `.gientech/skills/gienspec-tasks.md`
+- `.gientech/skills/gienspec-analyze.md`
 
 ### 新增文件 — Superpower（5）
 
-- `skills/brainstorming.md`
-- `skills/writing-plans.md`
-- `skills/test-driven-development.md`（入口 → `tdd.md`）
-- `skills/systematic-debugging.md`
-- `skills/verification-before-completion.md`
+- `.gientech/skills/brainstorming.md`
+- `.gientech/skills/writing-plans.md`
+- `.gientech/skills/test-driven-development.md`（入口 → `tdd.md`）
+- `.gientech/skills/systematic-debugging.md`
+- `.gientech/skills/verification-before-completion.md`
 
 ### 修改文件
 

@@ -108,7 +108,7 @@ flowchart LR
 - 明确 `WIKI_DIR=.gientech/wiki/`
 - 对齐 `AGENTS.md`
 - 建立/刷新 [`delivery-state.md`](./delivery-state.md)
-- 对齐 `skills/`、`.cursor/rules/`、`designdoc/`
+- 对齐 `.gientech/skills/`、`.gientech/rules/`、`designdoc/`
 
 对应结果是 [`harness-alignment-status.md`](./harness-alignment-status.md) 已闭环到 Phase 4，说明 4p12s、GienSpec、Superpower 的最小集已经在仓库内可用。
 
@@ -292,6 +292,21 @@ npm run db:seed
 3. 有可运行仓库与测试证据，便于复用
 4. 能同时解释“怎么用 GienCoder”和“为什么这样用更稳”
 
+### 5.6 给同事的最低复用包
+
+若只想快速复用本案例方法，至少准备：
+
+1. `AGENTS.md`
+2. `.gientech/skills/` + `.gientech/rules/` + `.gientech/wiki/`（统一 Harness 入口，见 [`.gientech/README.md`](../../.gientech/README.md)）
+3. `designdoc/delivery/delivery-state.md`
+4. `designdoc/delivery/4p12s-work-tasks.md`
+5. 本文件 + `designdoc/delivery/assets/e2e/`（对外分享截图）
+6. CI：`.github/workflows/ci.yml`（`quality` → `deploy-test`）
+
+**一句话总结：** 把 GienCoder 当「按 Skill 执行的交付助手」，而不是「一次性代码生成器」——**Wiki 定入口、文件定进度、测试定完成、部署定闭环**。
+
+> Skills / Rules 已迁至 `.gientech/`，不以 IDE 私有目录为真相源。
+
 ## 附录 A：里程碑快照
 
 ### 2026-07-21 | RepoWiki Step 0–8
@@ -384,6 +399,13 @@ npm run db:seed
 - **交付物**：`packages/domain|infrastructure` dist 构建；`apps/web/e2e/capture-screenshots.spec.ts`；`designdoc/delivery/assets/e2e/*.png`
 - **证据**：`npm run build` ✅；`npm run test` → 44 passed；`npm run test:e2e` → 3 passed
 - **案例要点**：闭环后的 commit 仍须带测试证据；E2E 截图落盘到仓库相对路径，便于分享文档直接引用
+
+### 2026-07-21 | Harness 入口迁入 `.gientech/`
+
+- **GienCoder 操作**：将 `skills/`、`.cursor/rules/` 统一迁入 `.gientech/skills/`、`.gientech/rules/`，全仓引用改写
+- **交付物**：[`.gientech/README.md`](../../.gientech/README.md)、[`.cursor/README.md`](../../.cursor/README.md)（废弃指向）
+- **证据**：路径引用以 `.gientech/` 为准；最低复用包不再依赖 IDE 私有目录
+- **案例要点**：给同事复用时以 GienCoder Harness 目录为准，避免把 Cursor 当真相源
 
 ## 附录 B：截图索引
 

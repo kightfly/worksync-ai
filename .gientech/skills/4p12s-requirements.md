@@ -15,7 +15,7 @@
 1. `designdoc/delivery/delivery-state.md`
 2. 原始需求（`raw-input.md` 或用户消息）
 3. 现有 `designdoc/specs/requirements.md`（过渡期对照，避免重复矛盾）
-4. `.cursor/rules/4p12s-gates.mdc`
+4. `.gientech/rules/4p12s-gates.mdc`
 
 ## 任务步骤
 
@@ -50,4 +50,4 @@
 
 ## 下一步
 
-人确认登记表 → `skills/4p12s-prd.md`
+人确认登记表 → `.gientech/skills/4p12s-prd.md`

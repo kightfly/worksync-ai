@@ -1,14 +1,14 @@
 # 交付流程与 Skills
 
 > **文档类型**：流程指引  
-> **实现状态**：✅ 与仓库 `skills/`、`AGENTS.md` 一致  
+> **实现状态**：✅ 与仓库 `.gientech/skills/`、`AGENTS.md` 一致  
 > **最后核对**：2026-07-21  
-> **真相源**：[`AGENTS.md`](../../AGENTS.md) | [`skills/`](../../skills/)  
+> **真相源**：[`AGENTS.md`](../../AGENTS.md) | [`.gientech/skills/`](../skills/)  
 > **审查跟踪**：[`wiki-audit-status.md`](../../designdoc/delivery/wiki-audit-status.md)
 
 ## 概述
 
-本仓库以 **四阶十二步（4p12s）** 为主链路交付产品；准备/设计段可叠加 **GienSpec 最小集**；开发执行段遵循 **Superpower 最小纪律**。技能文件均在仓库根 **`skills/`**（非 `.cursor/skills/`）。
+本仓库以 **四阶十二步（4p12s）** 为主链路交付产品；准备/设计段可叠加 **GienSpec 最小集**；开发执行段遵循 **Superpower 最小纪律**。技能文件统一在 **`.gientech/skills/`**（与 Wiki、Rules 同属 `.gientech/` Harness 目录）。
 
 **原则：不能靠对话记忆推进，必须文件化。** 进度以 [`delivery-state.md`](../../designdoc/delivery/delivery-state.md) 为准。
 
@@ -29,7 +29,7 @@
 | | ⑪ | Git 提交推送 | `4p12s-git-push.md` | commit / MR |
 | | ⑫ | 测试环境部署 | `4p12s-deployment-execution.md` | `deploy-log.md`、可访问环境 |
 
-完整门禁检查表： [`.cursor/rules/4p12s-gates.mdc`](../../.cursor/rules/4p12s-gates.mdc)
+完整门禁检查表： [`.gientech/rules/4p12s-gates.mdc`](../rules/4p12s-gates.mdc)
 
 ## GienSpec 最小集（编码前）
 
@@ -74,8 +74,8 @@ GienSpec（讲清楚要做什么、怎么拆）
 1. [`AGENTS.md`](../../AGENTS.md)
 2. [`delivery-state.md`](../../designdoc/delivery/delivery-state.md)
 3. [`harness-alignment-status.md`](../../designdoc/delivery/harness-alignment-status.md)（Harness 对齐工作时）
-4. 当前步骤对应 `skills/4p12s-*.md`
-5. [`.cursor/rules/`](../../.cursor/rules/)（尤其 `4p12s-gates.mdc`、`tdd.mdc`）
+4. 当前步骤对应 `.gientech/skills/4p12s-*.md`
+5. [`.gientech/rules/`](../rules/)（尤其 `4p12s-gates.mdc`、`tdd.mdc`）
 
 ## ⑧ 执行纪律（摘要）
 

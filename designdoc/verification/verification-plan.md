@@ -1,6 +1,6 @@
 # 验证计划
 
-> Skill：`skills/4p12s-verification-plan.md`  
+> Skill：`.gientech/skills/4p12s-verification-plan.md`  
 > 基于：PRD 0.2.0、`user-stories.md`、`design.md` 0.2.0
 
 ## 元信息

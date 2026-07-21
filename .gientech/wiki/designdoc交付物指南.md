@@ -55,7 +55,7 @@ designdoc/
 | ⑪ | Git commit / MR | — |
 | ⑫ | `delivery/deploy-log.md` | `templates/deploy-log.template.md` |
 
-模板使用：复制模板 → 填写 → 过对应 `skills/4p12s-*.md` 门禁 → **回写 `delivery-state.md`**。
+模板使用：复制模板 → 填写 → 过对应 `.gientech/skills/4p12s-*.md` 门禁 → **回写 `delivery-state.md`**。
 
 ## 当前产物状态（摘要）
 

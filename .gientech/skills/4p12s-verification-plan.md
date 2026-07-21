@@ -13,7 +13,7 @@
 
 1. `designdoc/specs/design.md`（及前后端拆分文档）
 2. `designdoc/specs/user-stories.md`
-3. `skills/tdd.md`、`.cursor/rules/tdd.mdc`
+3. `.gientech/skills/tdd.md`、`.gientech/rules/tdd.mdc`
 4. `designdoc/delivery/delivery-state.md`
 
 ## 任务步骤
@@ -48,4 +48,4 @@
 
 ## 下一步
 
-计划确认 → `skills/4p12s-implementation-tasks.md`
+计划确认 → `.gientech/skills/4p12s-implementation-tasks.md`

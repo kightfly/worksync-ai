@@ -2,7 +2,7 @@
 
 > **用途**：复制到 GienCoder「创建工作任务」表单（标题 + 详细描述）  
 > **格式**：用户故事 + Skill + 交付物 + 验收标准 + 完成定义  
-> **真相源**：`AGENTS.md`、`delivery-state.md`、`.cursor/rules/4p12s-gates.mdc`  
+> **真相源**：`AGENTS.md`、`delivery-state.md`、`.gientech/rules/4p12s-gates.mdc`  
 > **最近更新**：2026-07-21
 
 ## 使用说明
@@ -38,7 +38,7 @@
 
 【验收标准】
 - delivery-state.md 十二步状态表已建立
-- AGENTS.md、skills/、.cursor/rules/ 可被 Agent 读取
+- AGENTS.md、.gientech/skills/、.gientech/rules/ 可被 Agent 读取
 - npm run test / typecheck 可执行
 - 无测试护栏时不进入需求实现
 

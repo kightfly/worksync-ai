@@ -3,7 +3,7 @@
 > **4p12s ⑦ 约定（Phase 3）**  
 > - 本文件作为 **任务索引**（过渡期继续维护 Phase 勾选）。  
 > - 新拆任务请复制 `designdoc/templates/TASK.template.md` → `designdoc/specs/tasks/TASK-xxx.md`。  
-> - Skill：`skills/4p12s-implementation-tasks.md` / `4p12s-implementation-execution.md`。  
+> - Skill：`.gientech/skills/4p12s-implementation-tasks.md` / `4p12s-implementation-execution.md`。  
 > - 规格真相源：`requirements-register.md` / `prd.md` / `user-stories.md`（`requirements.md` 仅为索引）。
 
 ## Phase A - Harness 骨架 ✅

@@ -1,6 +1,6 @@
 # 产品需求文档（PRD）
 
-> Skill：`skills/4p12s-prd.md`  
+> Skill：`.gientech/skills/4p12s-prd.md`  
 > 基于：`requirements-register.md`
 
 ## 元信息

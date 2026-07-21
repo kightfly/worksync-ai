@@ -52,4 +52,4 @@
 
 ## 下一步
 
-`skills/gienspec-clarify.md` →（确认后）`4p12s-prd` / `gienspec-plan`
+`.gientech/skills/gienspec-clarify.md` →（确认后）`4p12s-prd` / `gienspec-plan`

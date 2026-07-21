@@ -28,7 +28,7 @@
 - 开始任务前：读 `delivery-state.md` 与 `harness-alignment-status.md`
 - 若当前步骤 Skills 文件仍为「待建」：按 `AGENTS.md` 门禁摘要执行，并在回写中注明「Skill 未落地」
 - 每步产出路径变更后：更新 `delivery-state.md` 对应行
-- Harness 方法论工作（补 Skills/CI 等）：更新 `harness-alignment-status.md`
+- Harness 方法论工作（补 .gientech/skills/CI 等）：更新 `harness-alignment-status.md`
 
 ## 与 TDD / 安全 / 时区
 

@@ -43,4 +43,4 @@ Superpower **第 3 步**；在 **4p12s ⑧** 执行单个 TASK 前使用。仓�
 
 ## 下一步
 
-`skills/test-driven-development.md`（按步执行）或 `4p12s-implementation-execution.md`
+`.gientech/skills/test-driven-development.md`（按步执行）或 `4p12s-implementation-execution.md`

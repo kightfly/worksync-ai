@@ -47,4 +47,4 @@
 
 ## 下一步
 
-E2E 通过 → `skills/4p12s-git-push.md`
+E2E 通过 → `.gientech/skills/4p12s-git-push.md`

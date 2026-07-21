@@ -1,7 +1,7 @@
 # 验证计划（模板）
 
 > 复制为 `designdoc/verification/verification-plan.md`。  
-> Skill：`skills/4p12s-verification-plan.md`
+> Skill：`.gientech/skills/4p12s-verification-plan.md`
 
 ## 元信息
 

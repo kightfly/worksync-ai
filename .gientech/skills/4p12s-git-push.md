@@ -49,4 +49,4 @@
 
 ## 下一步
 
-入库完成 → `skills/4p12s-deployment-execution.md`
+入库完成 → `.gientech/skills/4p12s-deployment-execution.md`

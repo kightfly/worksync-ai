@@ -3,7 +3,7 @@
 > **文档类型**：📋 设计契约  
 > **实现状态**：📋 未实现；**本期仅 GET**（PRD 0.2 / `design.md` 0.2）  
 > **最后核对**：2026-07-21  
-> **真相源**：[`design.md`](../../../designdoc/specs/design.md) | [`.cursor/rules/timezone.mdc`](../../../.cursor/rules/timezone.mdc)  
+> **真相源**：[`design.md`](../../../designdoc/specs/design.md) | [`.gientech/rules/timezone.mdc`](../../rules/timezone.mdc)  
 > **审查跟踪**：[`wiki-audit-status.md`](../../../designdoc/delivery/wiki-audit-status.md)
 
 ## 概述

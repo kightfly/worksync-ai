@@ -1,7 +1,7 @@
 # 产品需求文档 PRD（模板）
 
 > 复制为 `designdoc/specs/prd.md`。  
-> Skill：`skills/4p12s-prd.md`  
+> Skill：`.gientech/skills/4p12s-prd.md`  
 > 输入：`requirements-register.md`
 
 ## 元信息

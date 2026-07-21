@@ -1,7 +1,7 @@
 # 需求登记表（模板）
 
 > 复制为 `designdoc/specs/requirements-register.md` 后填写。  
-> Skill：`skills/4p12s-requirements.md`
+> Skill：`.gientech/skills/4p12s-requirements.md`
 
 ## 元信息
 

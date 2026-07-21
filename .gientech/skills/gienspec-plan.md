@@ -19,7 +19,7 @@
 1. 已确认规格 / PRD / 用户故事
 2. `designdoc/specs/design.md`、Wiki、现有代码结构
 3. `AGENTS.md` 模块边界；`timezone.mdc`；`security.mdc`
-4. 横切：`skills/architect.md`、`database.md`
+4. 横切：`.gientech/skills/architect.md`、`database.md`
 
 ## 任务步骤
 
@@ -51,4 +51,4 @@
 
 ## 下一步
 
-`skills/gienspec-tasks.md` → `gienspec-analyze` → `4p12s-verification-plan` / `4p12s-implementation-tasks`
+`.gientech/skills/gienspec-tasks.md` → `gienspec-analyze` → `4p12s-verification-plan` / `4p12s-implementation-tasks`

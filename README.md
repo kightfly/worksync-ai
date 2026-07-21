@@ -126,8 +126,10 @@ npm run lint && npm run typecheck && npm run test && npm run test:e2e && npm run
 │       ├── requirements.md     # 需求规格
 │       ├── design.md           # 设计文档
 │       └── tasks.md            # 任务清单
-├── skills/                     # 技能文件
-├── .cursor/rules/              # Cursor 规则
+├── .gientech/
+│   ├── wiki/                   # 知识库 Wiki（WIKI_DIR）
+│   ├── skills/                 # 4p12s + GienSpec + Superpower Skills
+│   └── rules/                  # 工程规则（TDD、门禁、安全、时区、命名）
 ├── .github/workflows/          # CI/CD
 └── package.json                # 根配置
 ```

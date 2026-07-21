@@ -1,6 +1,6 @@
 # 用户故事
 
-> Skill：`skills/4p12s-user-stories.md`  
+> Skill：`.gientech/skills/4p12s-user-stories.md`  
 > 基于 PRD 0.2.0 / `requirements-register.md`（2026-07-21 补全）
 
 ## 元信息

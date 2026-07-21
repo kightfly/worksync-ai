@@ -1,6 +1,6 @@
 # Wiki 审查跟踪表（wiki-audit-status）
 
-> **用途**：对照 `学习资料.md`、`skills/`、`AGENTS.md` 与仓库真相，分步审查 `.gientech/wiki/`。  
+> **用途**：对照 `学习资料.md`、`.gientech/skills/`、`AGENTS.md` 与仓库真相，分步审查 `.gientech/wiki/`。  
 > **维护者**：每完成一批 Step，更新本表对应行与「下一步计划」。  
 > **相关**：`delivery-state.md`、`harness-alignment-status.md`
 
@@ -15,7 +15,7 @@
 
 1. **仓库代码**（`apps/`、`packages/`、`.github/workflows/`）
 2. **designdoc**（`specs/`、`verification/`、`delivery/`）
-3. **AGENTS.md / `.cursor/rules/` / `skills/`**
+3. **AGENTS.md / `.gientech/rules/` / `.gientech/skills/`**
 4. **Wiki**（本目录，须与上面对齐）
 
 > 对应 `学习资料.md` §1：文件化约束、对接工具链，避免 Wiki 与代码脱节。

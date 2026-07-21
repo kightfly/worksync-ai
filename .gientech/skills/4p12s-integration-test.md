@@ -47,4 +47,4 @@
 
 ## 下一步
 
-集成门禁通过 → `skills/4p12s-e2e-test.md`
+集成门禁通过 → `.gientech/skills/4p12s-e2e-test.md`

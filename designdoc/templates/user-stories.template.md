@@ -1,7 +1,7 @@
 # 用户故事（模板）
 
 > 复制为 `designdoc/specs/user-stories.md`。  
-> Skill：`skills/4p12s-user-stories.md`
+> Skill：`.gientech/skills/4p12s-user-stories.md`
 
 ## 元信息
 

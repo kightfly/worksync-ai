@@ -48,5 +48,5 @@
 
 ## 下一步
 
-故事门禁通过 → `skills/4p12s-technical-design.md`  
-横切可参考：`skills/architect.md`
+故事门禁通过 → `.gientech/skills/4p12s-technical-design.md`  
+横切可参考：`.gientech/skills/architect.md`

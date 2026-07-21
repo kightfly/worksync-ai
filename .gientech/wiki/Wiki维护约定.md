@@ -16,7 +16,7 @@
 
 1. **仓库代码**（`apps/`、`packages/`、`.github/workflows/`）
 2. **designdoc**（`specs/`、`verification/`、`delivery/`）
-3. **AGENTS.md / `.cursor/rules/` / `skills/`**
+3. **AGENTS.md / `.gientech/rules/` / `.gientech/skills/`**
 4. **Wiki**
 
 ## 状态标注（强制）

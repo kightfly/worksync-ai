@@ -50,4 +50,4 @@
 
 ## 下一步
 
-`skills/gienspec-analyze.md` → 通过后 `4p12s-implementation-execution` + Superpower
+`.gientech/skills/gienspec-analyze.md` → 通过后 `4p12s-implementation-execution` + Superpower

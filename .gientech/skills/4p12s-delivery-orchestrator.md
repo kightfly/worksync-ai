@@ -15,7 +15,7 @@
 1. `AGENTS.md`
 2. `designdoc/delivery/delivery-state.md`（若存在则更新，否则创建）
 3. `designdoc/delivery/harness-alignment-status.md`
-4. `.cursor/rules/4p12s-gates.mdc`
+4. `.gientech/rules/4p12s-gates.mdc`
 5. 用户原始需求（口头、Issue、附件路径）
 
 ## 任务步骤
@@ -53,4 +53,4 @@
 
 ## 下一步
 
-门禁通过 → `skills/4p12s-requirements.md`
+门禁通过 → `.gientech/skills/4p12s-requirements.md`

@@ -16,7 +16,7 @@
 2. `designdoc/specs/prd.md`
 3. 现有 `designdoc/specs/design.md`、`.gientech/wiki/`
 4. `AGENTS.md` 模块边界；`timezone.mdc`；`security.mdc`
-5. 横切：`skills/architect.md`、`skills/database.md`
+5. 横切：`.gientech/skills/architect.md`、`.gientech/skills/database.md`
 
 ## 任务步骤
 
@@ -54,4 +54,4 @@
 
 ## 下一步
 
-设计确认 → `skills/4p12s-verification-plan.md`
+设计确认 → `.gientech/skills/4p12s-verification-plan.md`
