@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-**4p12s 重跑进行中；② 业务需求确认已完成。** 当前焦点：**③ 生成 PRD**。
+**4p12s 重跑进行中；③ 生成 PRD 已完成。** 当前焦点：**④ 用户故事**。
 
 | 路径 | 说明 |
 |------|------|
@@ -12,7 +12,8 @@
 | [`designdoc/delivery/delivery-state.md`](designdoc/delivery/delivery-state.md) | **十二步交付状态**（真相源） |
 | [`designdoc/delivery/harness-alignment-status.md`](designdoc/delivery/harness-alignment-status.md) | Harness 方法论对齐状态 |
 | [`designdoc/specs/raw-input.md`](designdoc/specs/raw-input.md) | 原始业务输入登记 |
-| [`designdoc/specs/requirements-register.md`](designdoc/specs/requirements-register.md) | **需求登记表**（② 产出） |
+| [`designdoc/specs/requirements-register.md`](designdoc/specs/requirements-register.md) | 需求登记表（② 产出） |
+| [`designdoc/specs/prd.md`](designdoc/specs/prd.md) | **产品需求文档 PRD**（③ 产出） |
 | [`designdoc/templates/`](designdoc/templates/) | 空白交付物模板 |
 | [`.gientech/skills/`](.gientech/skills/) | 4p12s / GienSpec / Superpower |
 | [`.gientech/rules/`](.gientech/rules/) | TDD、门禁、安全、时区、命名 |

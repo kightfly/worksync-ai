@@ -5,7 +5,7 @@
 > **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.gientech/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-22  
-**当前焦点步骤**：**③ 生成 PRD**
+**当前焦点步骤**：**④ 用户故事**
 
 ---
 
@@ -48,7 +48,7 @@
 |---|------|------|------|--------------|---------------|
 | ① | 流程初始化 | `done` | `AGENTS.md`、`整体设计.md`、`.gientech/skills/`、`.gientech/rules/` | `designdoc/delivery/delivery-state.md`、`harness-alignment-status.md`、`designdoc/specs/raw-input.md`、`.gientech/wiki/`（最小占位 4 页） | 测试 scripts 待⑧；Wiki 仅占位 |
 | ② | 业务需求确认 | `done` | `raw-input.md` → `整体设计.md` | `designdoc/specs/requirements-register.md` | Q-001/Q-002 已关闭 |
-| ③ | 生成 PRD | `not_started` | `requirements-register.md` | `designdoc/specs/prd.md` | — |
+| ③ | 生成 PRD | `done` | `requirements-register.md` | `designdoc/specs/prd.md` | v0.1.0-replay |
 | ④ | 用户故事 | `not_started` | `prd.md` | `designdoc/specs/user-stories.md` | — |
 | ⑤ | 技术设计 | `not_started` | `user-stories.md` | `designdoc/specs/design.md` | — |
 | ⑥ | 验证计划 | `not_started` | `design.md` | `designdoc/verification/verification-plan.md` | — |
@@ -78,6 +78,6 @@
 
 ## 下一步
 
-**③ 生成 PRD** → Skill：`.gientech/skills/4p12s-prd.md`  
-输入：`designdoc/specs/requirements-register.md`  
-产出：`designdoc/specs/prd.md`
+**④ 用户故事** → Skill：`.gientech/skills/4p12s-user-stories.md`  
+输入：`designdoc/specs/prd.md`  
+产出：`designdoc/specs/user-stories.md`
