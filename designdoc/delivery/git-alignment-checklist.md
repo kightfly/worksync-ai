@@ -52,8 +52,8 @@
 |----|-----|
 | ⑩ 完成时 HEAD（推送前基线） | `44095bd` — Task:32366_⑩ E2E… |
 | ⑪ 本步 commit | `a27844c` — ⑪ Git 提交推送：完成需求设计测试对齐检查并回写 delivery-state |
-| `git push` | `origin/replay/4p12s-from-design` |
-| PR/MR | 本机无 `gh` CLI；请在 GitHub 对比 `develop...replay/4p12s-from-design` 手动开 PR |
+| `git push` | **未成功**：`Permission denied (publickey)`；本地 `ahead 2`，请在已配置 GitHub SSH/凭证的终端执行 `git push -u origin HEAD` |
+| PR/MR | 本机无 `gh` CLI；push 成功后在 GitHub 对比 `develop...replay/4p12s-from-design` 手动开 PR |
 
 ### 回滚思路
 

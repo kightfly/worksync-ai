@@ -56,7 +56,7 @@
 | ⑧ | 执行开发 | `done` | TASK-S001～W103 | `apps/`、`packages/`、单测 | 单元全绿；集成/E2E 留⑨⑩；需 `DATABASE_URL` 跑 migrate/seed |
 | ⑨ | 集成测试 | `done` | ⑧、真 `DATABASE_URL` | `designdoc/verification/verification-result.md`、`apps/api/src/api.integration.test.ts` | 16 passed；禁 Mock；`node scripts/run-integration.mjs` |
 | ⑩ | E2E 测试 | `done` | ⑨、真 API+Web+DB | `apps/web/e2e/`、`playwright.config.ts`、`verification-result.md` §B、`scripts/run-e2e.mjs` | E2E-001～009 全绿；`npm run test:e2e` |
-| ⑪ | Git 提交推送 | `done` | ⑩、`verification-result.md` | `designdoc/delivery/git-alignment-checklist.md`；分支已推 `origin/replay/4p12s-from-design` | 对齐通过；无 `gh` 未自动开 PR |
+| ⑪ | Git 提交推送 | `done` | ⑩、`verification-result.md` | `designdoc/delivery/git-alignment-checklist.md`；本地 commit `a27844c`/`dc766c2` | 对齐通过；**push 因本机 SSH `Permission denied (publickey)` 未成功**，分支 ahead 2，需人在可认证环境执行 `git push`；无 `gh` 未开 PR |
 | ⑫ | 测试环境部署 | `not_started` | ⑪ | `designdoc/delivery/deploy-log.md` | 依赖⑧ |
 
 ---
