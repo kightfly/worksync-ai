@@ -5,7 +5,8 @@ import * as schema from './schema.js'
 export type Db = ReturnType<typeof createDb>
 
 export function createDb(connectionString: string) {
-  const client = postgres(connectionString, { max: 10 })
+  // Supabase pooler (6543) 不支持 prepared statements
+  const client = postgres(connectionString, { max: 10, prepare: false })
   return drizzle(client, { schema })
 }
 
