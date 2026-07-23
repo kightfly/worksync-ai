@@ -5,7 +5,7 @@
 > **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.gientech/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-23  
-**当前焦点步骤**：**⑦ 任务拆分**
+**当前焦点步骤**：**⑧ 执行开发**
 
 ---
 
@@ -52,7 +52,7 @@
 | ④ | 用户故事 | `done` | `prd.md` | `designdoc/specs/user-stories.md` | US-001～030；含状态机 a～f、空态/异常 |
 | ⑤ | 技术设计 | `done` | `user-stories.md`、`prd.md` | `designdoc/specs/design.md` | v0.1.0-replay；前后端+契约+ER |
 | ⑥ | 验证计划 | `done` | `design.md`、`user-stories.md` | `designdoc/verification/verification-plan.md` | V-001～026；E2E-001～009；禁 Mock 已写清 |
-| ⑦ | 任务拆分 | `not_started` | 设计 + 验证计划 | `designdoc/tasks.md`、`designdoc/tasks/TASK-*.md` | — |
+| ⑦ | 任务拆分 | `done` | `design.md` + `verification-plan.md` | `designdoc/specs/tasks.md`、`designdoc/specs/tasks/TASK-*.md` | S001→W103 共 10 TASK；契约 0.1.0-replay |
 | ⑧ | 执行开发 | `not_started` | TASK | `apps/`、`packages/`、单测 | 无 package.json / DB |
 | ⑨ | 集成测试 | `not_started` | ⑧ | `designdoc/verification/verification-result.md` | 依赖⑧ |
 | ⑩ | E2E 测试 | `not_started` | ⑨ | `apps/web/e2e/`、Playwright 报告 | 依赖⑧⑨ |
@@ -78,6 +78,6 @@
 
 ## 下一步
 
-**⑦ 任务拆分** → Skill：`.gientech/skills/4p12s-implementation-tasks.md`  
-输入：`design.md` + `verification-plan.md`  
-产出：`designdoc/tasks.md`、`designdoc/tasks/TASK-*.md`
+**⑧ 执行开发** → Skill：`.gientech/skills/4p12s-implementation-execution.md`  
+输入：`designdoc/specs/tasks.md`（建议从 TASK-S001 → B101∥B102 → I101 …）  
+产出：`apps/`、`packages/`、单测证据（回写各 TASK）
