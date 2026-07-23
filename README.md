@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-**4p12s 重跑进行中；⑤ 技术设计已完成。** 当前焦点：**⑥ 验证计划**。
+**4p12s 重跑进行中；⑥ 验证计划已完成。** 当前焦点：**⑦ 任务拆分**。
 
 | 路径 | 说明 |
 |------|------|
@@ -15,7 +15,8 @@
 | [`designdoc/specs/requirements-register.md`](designdoc/specs/requirements-register.md) | 需求登记表（② 产出） |
 | [`designdoc/specs/prd.md`](designdoc/specs/prd.md) | 产品需求文档 PRD（③ 产出） |
 | [`designdoc/specs/user-stories.md`](designdoc/specs/user-stories.md) | 用户故事（④ 产出） |
-| [`designdoc/specs/design.md`](designdoc/specs/design.md) | **技术设计**（⑤ 产出） |
+| [`designdoc/specs/design.md`](designdoc/specs/design.md) | 技术设计（⑤ 产出） |
+| [`designdoc/verification/verification-plan.md`](designdoc/verification/verification-plan.md) | **验证计划**（⑥ 产出） |
 | [`designdoc/templates/`](designdoc/templates/) | 空白交付物模板 |
 | [`.gientech/skills/`](.gientech/skills/) | 4p12s / GienSpec / Superpower |
 | [`.gientech/rules/`](.gientech/rules/) | TDD、门禁、安全、时区、命名 |

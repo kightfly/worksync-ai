@@ -5,7 +5,7 @@
 > **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.gientech/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-23  
-**当前焦点步骤**：**⑥ 验证计划**
+**当前焦点步骤**：**⑦ 任务拆分**
 
 ---
 
@@ -51,7 +51,7 @@
 | ③ | 生成 PRD | `done` | `requirements-register.md` | `designdoc/specs/prd.md` | v0.1.0-replay |
 | ④ | 用户故事 | `done` | `prd.md` | `designdoc/specs/user-stories.md` | US-001～030；含状态机 a～f、空态/异常 |
 | ⑤ | 技术设计 | `done` | `user-stories.md`、`prd.md` | `designdoc/specs/design.md` | v0.1.0-replay；前后端+契约+ER |
-| ⑥ | 验证计划 | `not_started` | `design.md` | `designdoc/verification/verification-plan.md` | — |
+| ⑥ | 验证计划 | `done` | `design.md`、`user-stories.md` | `designdoc/verification/verification-plan.md` | V-001～026；E2E-001～009；禁 Mock 已写清 |
 | ⑦ | 任务拆分 | `not_started` | 设计 + 验证计划 | `designdoc/tasks.md`、`designdoc/tasks/TASK-*.md` | — |
 | ⑧ | 执行开发 | `not_started` | TASK | `apps/`、`packages/`、单测 | 无 package.json / DB |
 | ⑨ | 集成测试 | `not_started` | ⑧ | `designdoc/verification/verification-result.md` | 依赖⑧ |
@@ -78,6 +78,6 @@
 
 ## 下一步
 
-**⑥ 验证计划** → Skill：`.gientech/skills/4p12s-verification-plan.md`  
-输入：`designdoc/specs/design.md`  
-产出：`designdoc/verification/verification-plan.md`
+**⑦ 任务拆分** → Skill：`.gientech/skills/4p12s-implementation-tasks.md`  
+输入：`design.md` + `verification-plan.md`  
+产出：`designdoc/tasks.md`、`designdoc/tasks/TASK-*.md`
