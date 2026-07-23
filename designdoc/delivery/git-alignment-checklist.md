@@ -51,8 +51,8 @@
 | 项 | 值 |
 |----|-----|
 | ⑩ 完成时 HEAD（推送前基线） | `44095bd` — Task:32366_⑩ E2E… |
-| ⑪ 本步 commit | （提交后由 push 记录回填；见本节 §4 更新） |
-| `git push` | 目标：`origin/replay/4p12s-from-design`（⑪ 执行时推送） |
+| ⑪ 本步 commit | `a27844c` — ⑪ Git 提交推送：完成需求设计测试对齐检查并回写 delivery-state |
+| `git push` | `origin/replay/4p12s-from-design` |
 | PR/MR | 本机无 `gh` CLI；请在 GitHub 对比 `develop...replay/4p12s-from-design` 手动开 PR |
 
 ### 回滚思路
