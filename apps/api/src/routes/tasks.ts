@@ -148,7 +148,7 @@ export function registerTaskRoutes(app: FastifyInstance, tasks: TaskRepository) 
       const { id } = request.params as { id: string }
       const deleted = await tasks.delete(id, userId)
       if (!deleted) throw notFound()
-      return reply.status(204).send()
+      return reply.code(204).send()
     } catch (err) {
       return sendApiError(reply, err)
     }

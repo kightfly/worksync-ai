@@ -69,7 +69,9 @@ export function TasksPage() {
       })
       await load()
     } catch (e) {
-      setError(e instanceof ApiClientError ? e.message : '更新に失敗しました')
+      if (e instanceof ApiClientError) setError(e.message)
+      else if (e instanceof Error) setError(e.message)
+      else setError('更新に失敗しました')
     }
   }
 

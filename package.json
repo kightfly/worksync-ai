@@ -12,6 +12,7 @@
     "typecheck": "npm run build -w @gienharness/domain && npm run build -w @gienharness/infrastructure && npm run typecheck -w @gienharness/domain -w @gienharness/infrastructure -w @gienharness/api -w @gienharness/web --if-present",
     "test": "npm run test -w @gienharness/domain -w @gienharness/infrastructure -w @gienharness/api -w @gienharness/web --if-present",
     "test:integration": "npm run test:integration -w @gienharness/api --if-present",
+    "test:e2e": "node scripts/run-e2e.mjs",
     "dev:api": "npm run build -w @gienharness/domain && npm run build -w @gienharness/infrastructure && npm run dev -w @gienharness/api",
     "dev:web": "npm run dev -w @gienharness/web",
     "db:generate": "npm run db:generate -w @gienharness/infrastructure",

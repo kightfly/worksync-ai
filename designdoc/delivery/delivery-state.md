@@ -5,7 +5,7 @@
 > **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.gientech/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-23  
-**当前焦点步骤**：**⑩ E2E 测试**
+**当前焦点步骤**：**⑪ Git 提交推送**
 
 ---
 
@@ -36,8 +36,8 @@
 
 | 阻塞项 | 预期解除步骤 |
 |--------|--------------|
-| 集成/E2E 需真 PostgreSQL（`DATABASE_URL`） | ⑨⑩ |
-| Playwright E2E 套件尚未落盘 | ⑩ |
+| 集成/E2E 需真 PostgreSQL（`DATABASE_URL`） | ⑨⑩ 已解除（本地 `.env.local`） |
+| Playwright E2E 套件尚未落盘 | ⑩ 已解除 |
 | 无 CI workflow | ⑪ 前 |
 
 ---
@@ -55,8 +55,8 @@
 | ⑦ | 任务拆分 | `done` | `design.md` + `verification-plan.md` | `designdoc/specs/tasks.md`、`designdoc/specs/tasks/TASK-*.md` | S001→W103 共 10 TASK；契约 0.1.0-replay |
 | ⑧ | 执行开发 | `done` | TASK-S001～W103 | `apps/`、`packages/`、单测 | 单元全绿；集成/E2E 留⑨⑩；需 `DATABASE_URL` 跑 migrate/seed |
 | ⑨ | 集成测试 | `done` | ⑧、真 `DATABASE_URL` | `designdoc/verification/verification-result.md`、`apps/api/src/api.integration.test.ts` | 16 passed；禁 Mock；`node scripts/run-integration.mjs` |
-| ⑩ | E2E 测试 | `not_started` | ⑨ | `apps/web/e2e/`、Playwright 报告 | 依赖⑧⑨ |
-| ⑪ | Git 提交推送 | `not_started` | ⑩ | 对齐检查清单 | 无 CI |
+| ⑩ | E2E 测试 | `done` | ⑨、真 API+Web+DB | `apps/web/e2e/`、`playwright.config.ts`、`verification-result.md` §B、`scripts/run-e2e.mjs` | E2E-001～009 全绿；`npm run test:e2e` |
+| ⑪ | Git 提交推送 | `not_started` | ⑩ | 对齐检查清单 | 无 CI；人提交 |
 | ⑫ | 测试环境部署 | `not_started` | ⑪ | `designdoc/delivery/deploy-log.md` | 依赖⑧ |
 
 ---
@@ -78,6 +78,6 @@
 
 ## 下一步
 
-**⑩ E2E 测试** → Skill：`.gientech/skills/4p12s-e2e-test.md`  
-前提：⑨ 已通过；启动真 API + Web + DB；Playwright 覆盖 E2E-001～009  
-产出：`apps/web/e2e/`、报告摘要写入 `verification-result.md` E2E 段
+**⑪ Git 提交推送** → Skill：`.gientech/skills/4p12s-git-push.md`  
+前提：⑨⑩ 已通过；按仓库约定由人执行 commit（Agent 仅保证可提交状态）  
+产出：对齐检查 / 推送记录（若需要）

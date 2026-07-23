@@ -6,7 +6,11 @@ coverage/
 .env.local
 *.log
 playwright-report/
+**/playwright-report/
 test-results/
+**/test-results/
+blob-report/
+
 .DS_Store
 .idea/
 .vscode/

@@ -1,7 +1,10 @@
 const TOKEN_KEY = 'gienharness_token'
 
 export function getApiBase(): string {
-  return import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:3100'
+  // Empty = same-origin (Vite proxy in dev). Absolute URL still supported.
+  const raw = import.meta.env.VITE_API_BASE_URL
+  if (raw === undefined || raw === null) return ''
+  return String(raw).replace(/\/$/, '')
 }
 
 export function getStoredToken(): string | null {
@@ -29,18 +32,32 @@ export async function apiFetch<T>(
   options: RequestInit & { token?: string | null } = {},
 ): Promise<T> {
   const headers = new Headers(options.headers)
-  headers.set('Content-Type', 'application/json')
   const token = options.token === undefined ? getStoredToken() : options.token
   if (token) headers.set('Authorization', `Bearer ${token}`)
+  if (options.body !== undefined && options.body !== null && !headers.has('Content-Type')) {
+    headers.set('Content-Type', 'application/json')
+  }
 
   const res = await fetch(`${getApiBase()}${path}`, { ...options, headers })
-  if (res.status === 204) return undefined as T
+  if (res.status === 204 || res.status === 205) return undefined as T
 
-  const body = await res.json().catch(() => ({}))
+  const text = await res.text()
+  let body: unknown = {}
+  if (text) {
+    try {
+      body = JSON.parse(text)
+    } catch {
+      body = { error: { code: 'UNKNOWN', message: text.slice(0, 200) } }
+    }
+  }
+
   if (!res.ok) {
-    const code = body?.error?.code ?? 'UNKNOWN'
-    const message = body?.error?.message ?? 'エラーが発生しました'
-    throw new ApiClientError(res.status, code, message)
+    const err = (body as { error?: { code?: string; message?: string } })?.error
+    throw new ApiClientError(
+      res.status,
+      err?.code ?? 'UNKNOWN',
+      err?.message ?? 'エラーが発生しました',
+    )
   }
   return body as T
 }

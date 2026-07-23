@@ -29,31 +29,25 @@ async function main() {
     console.log('seed user created', userId)
   }
 
-  const existingAtt = await db
-    .select()
-    .from(attendanceRecords)
-    .where(eq(attendanceRecords.userId, userId))
-    .limit(1)
-
-  if (!existingAtt[0]) {
-    // Same-day: Tokyo 2026-07-20 09:00-18:00 → UTC 00:00-09:00
-    await db.insert(attendanceRecords).values({
+  // Idempotent: reset demo attendance to known Tokyo scenarios for E2E/integration
+  await db.delete(attendanceRecords).where(eq(attendanceRecords.userId, userId))
+  await db.insert(attendanceRecords).values([
+    {
       userId,
+      // Tokyo 2026-07-20 09:00-18:00
       checkInTime: new Date('2026-07-20T00:00:00.000Z'),
       checkOutTime: new Date('2026-07-20T09:00:00.000Z'),
       workDate: '2026-07-20',
-    })
-    // Cross-day: Tokyo 2026-07-21 23:00 → 2026-07-22 02:00 → work_date 2026-07-21
-    await db.insert(attendanceRecords).values({
+    },
+    {
       userId,
+      // Tokyo 2026-07-21 23:00 → 2026-07-22 02:00
       checkInTime: new Date('2026-07-21T14:00:00.000Z'),
       checkOutTime: new Date('2026-07-21T17:00:00.000Z'),
       workDate: '2026-07-21',
-    })
-    console.log('seed attendance inserted')
-  } else {
-    console.log('seed attendance exists')
-  }
+    },
+  ])
+  console.log('seed attendance reset')
 
   console.log('seed ok')
   process.exit(0)
