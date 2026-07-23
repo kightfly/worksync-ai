@@ -1,4 +1,7 @@
+import { loadEnv } from './load-env.js'
 import { buildAppFromEnv } from './app.js'
+
+loadEnv()
 
 async function main() {
   const port = Number(process.env.API_PORT ?? process.env.PORT ?? 3100)

@@ -2,8 +2,10 @@ import bcrypt from 'bcryptjs'
 import { eq } from 'drizzle-orm'
 import { createDb, requireDatabaseUrl } from './db.js'
 import { attendanceRecords, users } from './schema.js'
+import { loadRepoEnv } from './load-env.js'
 
 async function main() {
+  loadRepoEnv()
   const saltRounds = Number(process.env.SALT_ROUNDS ?? 10)
   const db = createDb(requireDatabaseUrl())
 

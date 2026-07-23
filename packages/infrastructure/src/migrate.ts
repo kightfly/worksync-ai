@@ -3,8 +3,10 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import postgres from 'postgres'
 import { requireDatabaseUrl } from './db.js'
+import { loadRepoEnv } from './load-env.js'
 
 async function main() {
+  loadRepoEnv()
   const url = requireDatabaseUrl()
   const sql = postgres(url, { max: 1, prepare: false })
   const dir = dirname(fileURLToPath(import.meta.url))
