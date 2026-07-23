@@ -49,16 +49,16 @@ flowchart TD
 
 | ID | 标题 | 依赖 | 对应 US / V | 可并行 | 状态 |
 |----|------|------|-------------|--------|------|
-| [TASK-S001](./tasks/TASK-S001.md) | Monorepo 脚手架与质量脚本 | — | 环境前提 | — | todo |
-| [TASK-B101](./tasks/TASK-B101.md) | Task 领域实体与状态机 | S001 | US-012*；V-011～015 | 与 B102 | todo |
-| [TASK-B102](./tasks/TASK-B102.md) | 时区与 work_date 工具 | S001 | V-022、V-025 | 与 B101 | todo |
-| [TASK-I101](./tasks/TASK-I101.md) | Drizzle Schema / 迁移 / Seed | S001、B101、B102 | F-012；seed | — | todo |
-| [TASK-A101](./tasks/TASK-A101.md) | Auth + Health API | I101 | US-001～003、030；V-001/003/006/023/026 | 与 A102/A103 部分 | todo |
-| [TASK-A102](./tasks/TASK-A102.md) | Tasks REST API | I101、B101、A101* | US-010～013；V-007～016、024 | A101 JWT 插件宜先 | todo |
-| [TASK-A103](./tasks/TASK-A103.md) | Attendance 只读 API | I101、B102、A101* | US-020～021；V-019～022 | 同上 | todo |
-| [TASK-W101](./tasks/TASK-W101.md) | 登录 / 登出 / 路由守卫 UI | A101 | US-001～003；V-002/004/005 | — | todo |
-| [TASK-W102](./tasks/TASK-W102.md) | タスク管理 UI | A102、W101 | US-010～013；V-008/010/017/018 | 与 W103 | todo |
-| [TASK-W103](./tasks/TASK-W103.md) | 打刻 + ダッシュボード UI | A103、W101 | US-020～021、F-004；V-019/020 | 与 W102 | todo |
+| [TASK-S001](./tasks/TASK-S001.md) | Monorepo 脚手架与质量脚本 | — | 环境前提 | — | done |
+| [TASK-B101](./tasks/TASK-B101.md) | Task 领域实体与状态机 | S001 | US-012*；V-011～015 | 与 B102 | done |
+| [TASK-B102](./tasks/TASK-B102.md) | 时区与 work_date 工具 | S001 | V-022、V-025 | 与 B101 | done |
+| [TASK-I101](./tasks/TASK-I101.md) | Drizzle Schema / 迁移 / Seed | S001、B101、B102 | F-012；seed | — | done |
+| [TASK-A101](./tasks/TASK-A101.md) | Auth + Health API | I101 | US-001～003、030；V-001/003/006/023/026 | 与 A102/A103 部分 | done |
+| [TASK-A102](./tasks/TASK-A102.md) | Tasks REST API | I101、B101、A101* | US-010～013；V-007～016、024 | A101 JWT 插件宜先 | done |
+| [TASK-A103](./tasks/TASK-A103.md) | Attendance 只读 API | I101、B102、A101* | US-020～021；V-019～022 | 同上 | done |
+| [TASK-W101](./tasks/TASK-W101.md) | 登录 / 登出 / 路由守卫 UI | A101 | US-001～003；V-002/004/005 | — | done |
+| [TASK-W102](./tasks/TASK-W102.md) | タスク管理 UI | A102、W101 | US-010～013；V-008/010/017/018 | 与 W103 | done |
+| [TASK-W103](./tasks/TASK-W103.md) | 打刻 + ダッシュボード UI | A103、W101 | US-020～021、F-004；V-019/020 | 与 W102 | done |
 
 \* A102/A103 依赖 A101 的 JWT 鉴权插件（可先 stub 再合并，但验收前须真实 JWT）。
 

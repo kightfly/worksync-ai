@@ -5,7 +5,7 @@
 | 项 | 值 |
 |----|-----|
 | **标题** | Monorepo 脚手架与质量脚本 |
-| **状态** | todo |
+| **状态** | done |
 | **依赖** | — |
 | **契约版本** | design.md `0.1.0-replay` |
 | **对应 US / V** | 环境前提（verification-plan §4.2） |
@@ -21,8 +21,8 @@
 
 ## 涉及文件
 
-- 根 `package.json` / `pnpm-workspace` 或 npm workspaces
-- `apps/web/*`、`apps/api/*`、`packages/domain/*`、`packages/infrastructure/*`（占位）
+- 根 `package.json` / npm workspaces
+- `apps/web/*`、`apps/api/*`、`packages/domain/*`、`packages/infrastructure/*`
 - `.env.example`（`DATABASE_URL`、`JWT_SECRET`、`SALT_ROUNDS`）
 - ESLint / tsconfig 基座
 
@@ -33,21 +33,22 @@
 
 ## 验收标准
 
-- [ ] 四包目录存在且可 `npm install`
-- [ ] `lint` / `typecheck` / `test` 脚本可执行且通过（最小）
-- [ ] `.env.example` 含约定变量名；无密钥入库
-- [ ] 技术栈未偏离 AGENTS / design §2
+- [x] 四包目录存在且可 `npm install`
+- [x] `lint` / `typecheck` / `test` 脚本可执行且通过（最小）
+- [x] `.env.example` 含约定变量名；无密钥入库
+- [x] 技术栈未偏离 AGENTS / design §2
 
 ## 证据（⑧ 回写）
 
 ```bash
-# 命令与结果摘要
+npm install
+npm test
 ```
 
-- 红灯次数：
-- 升级给人：是 / 否
+- 红灯次数：0
+- 升级给人：否
 
 ## 门禁
 
-- [ ] 可独立验证
-- [ ] 测试证据齐全 → 可进入 B101/B102/I101
+- [x] 可独立验证
+- [x] 测试证据齐全 → 可进入 B101/B102/I101

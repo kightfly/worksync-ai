@@ -1,33 +1,12 @@
-# 根目录
 node_modules/
 dist/
 build/
-.cache/
+coverage/
 .env
 .env.local
-.env.*.local
 *.log
-npm-debug.log*
-coverage/
-.tsbuildinfo
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Test artifacts（源码测试文件必须入库，勿忽略 *.test.ts / *.spec.ts）
-coverage/
 playwright-report/
 test-results/
-blob-report/
-playwright/.cache/
-
-# Drizzle
-drizzle/meta/
+.DS_Store
+.idea/
+.vscode/

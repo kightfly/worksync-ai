@@ -5,7 +5,7 @@
 | 项 | 值 |
 |----|-----|
 | **标题** | 时区与 work_date 工具 |
-| **状态** | todo |
+| **状态** | done |
 | **依赖** | S001 |
 | **契约版本** | design.md `0.1.0-replay` §7；timezone.mdc |
 | **对应 US / V** | US-021b；V-022、V-025 |
@@ -21,8 +21,8 @@
 
 ## 涉及文件
 
-- `packages/domain` 或 `packages/infrastructure` 下共享 `datetime` 工具（优先无框架依赖，放 domain/util 亦可）
-- `*.test.ts`
+- `packages/domain/src/datetime.ts`
+- `packages/domain/src/datetime.test.ts`
 
 ## 失败测试（红灯意图）
 
@@ -32,19 +32,20 @@
 
 ## 验收标准
 
-- [ ] 跨日与边界单测全绿
-- [ ] 文档/注释标明输入是 UTC 还是 Tokyo 墙钟
+- [x] 跨日与边界单测全绿
+- [x] 文档/注释标明输入是 UTC 还是 Tokyo 墙钟
 
 ## 证据（⑧ 回写）
 
 ```bash
-# npm run test ...
+npm run test -w @gienharness/domain
+# datetime.test.ts 3 passed
 ```
 
-- 红灯次数：
-- 升级给人：是 / 否
+- 红灯次数：—
+- 升级给人：否
 
 ## 门禁
 
-- [ ] 可独立验证
-- [ ] 测试证据齐全 → 可供 A103/W103 引用
+- [x] 可独立验证
+- [x] 测试证据齐全 → 可供 A103/W103 引用

@@ -1,0 +1,24 @@
+{
+  "name": "gienharness",
+  "private": true,
+  "version": "0.1.0-replay",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @gienharness/domain && npm run build -w @gienharness/infrastructure && npm run build -w @gienharness/api --if-present && npm run build -w @gienharness/web --if-present",
+    "lint": "npm run lint -w @gienharness/domain -w @gienharness/infrastructure -w @gienharness/api -w @gienharness/web --if-present",
+    "typecheck": "npm run build -w @gienharness/domain && npm run build -w @gienharness/infrastructure && npm run typecheck -w @gienharness/domain -w @gienharness/infrastructure -w @gienharness/api -w @gienharness/web --if-present",
+    "test": "npm run test -w @gienharness/domain -w @gienharness/infrastructure -w @gienharness/api -w @gienharness/web --if-present",
+    "test:integration": "npm run test:integration -w @gienharness/api --if-present",
+    "dev:api": "npm run build -w @gienharness/domain && npm run build -w @gienharness/infrastructure && npm run dev -w @gienharness/api",
+    "dev:web": "npm run dev -w @gienharness/web",
+    "db:generate": "npm run db:generate -w @gienharness/infrastructure",
+    "db:migrate": "npm run db:migrate -w @gienharness/infrastructure",
+    "db:seed": "npm run db:seed -w @gienharness/infrastructure"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

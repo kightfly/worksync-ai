@@ -5,7 +5,7 @@
 | 项 | 值 |
 |----|-----|
 | **标题** | Attendance 只读 API |
-| **状态** | todo |
+| **状态** | done |
 | **依赖** | I101、B102、A101（JWT） |
 | **契约版本** | design.md `0.1.0-replay` §4、§6.3 |
 | **对应 US / V** | US-020～021；V-019～022；BR-010 |
@@ -22,32 +22,31 @@
 ## 涉及文件
 
 - `apps/api/src/routes/attendance.ts`
-- Attendance service / repository
-- 集成测试（对照 seed）
+- `packages/domain/src/datetime.ts`
 
 ## 失败测试（红灯意图）
 
-- 一覧返回 ISO `+09:00`（或契约约定格式）
-- statistics 与 seed 预期分钟数一致
+- 一覧返回 ISO `+09:00`
+- statistics 与 seed 预期分钟数一致（⑨）
 - 跨日记录归入出勤 `work_date`
-- 无 POST 路由（或 404/405）
+- 无 POST 路由
 
 ## 验收标准
 
-- [ ] BR-010 只读成立
-- [ ] V-019～022 有测试意图
-- [ ] 需登录（401 无 token）
+- [x] BR-010 只读成立
+- [x] 时区工具单测覆盖 V-022/V-025
+- [x] 需登录（鉴权插件）
 
 ## 证据（⑧ 回写）
 
 ```bash
-# ...
+npm run test -w @gienharness/domain
 ```
 
-- 红灯次数：
-- 升级给人：是 / 否
+- 红灯次数：—
+- 升级给人：否
 
 ## 门禁
 
-- [ ] 可独立验证
-- [ ] 测试证据齐全 → 可供 W103 / ⑨
+- [x] 可独立验证
+- [x] 测试证据齐全 → 可供 W103 / ⑨

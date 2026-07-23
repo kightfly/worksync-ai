@@ -5,7 +5,7 @@
 > **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.gientech/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-23  
-**当前焦点步骤**：**⑧ 执行开发**
+**当前焦点步骤**：**⑨ 集成测试**
 
 ---
 
@@ -32,12 +32,12 @@
 
 ---
 
-## 全局阻塞项（不阻止①完成）
+## 全局阻塞项
 
 | 阻塞项 | 预期解除步骤 |
 |--------|--------------|
-| 无根 `package.json`；`npm test` / `lint` / `e2e` 脚本不存在 | ⑧ |
-| 无 `DATABASE_URL` / 本地 DB 配置 | ⑧ |
+| 集成/E2E 需真 PostgreSQL（`DATABASE_URL`） | ⑨⑩ |
+| Playwright E2E 套件尚未落盘 | ⑩ |
 | 无 CI workflow | ⑪ 前 |
 
 ---
@@ -53,8 +53,8 @@
 | ⑤ | 技术设计 | `done` | `user-stories.md`、`prd.md` | `designdoc/specs/design.md` | v0.1.0-replay；前后端+契约+ER |
 | ⑥ | 验证计划 | `done` | `design.md`、`user-stories.md` | `designdoc/verification/verification-plan.md` | V-001～026；E2E-001～009；禁 Mock 已写清 |
 | ⑦ | 任务拆分 | `done` | `design.md` + `verification-plan.md` | `designdoc/specs/tasks.md`、`designdoc/specs/tasks/TASK-*.md` | S001→W103 共 10 TASK；契约 0.1.0-replay |
-| ⑧ | 执行开发 | `not_started` | TASK | `apps/`、`packages/`、单测 | 无 package.json / DB |
-| ⑨ | 集成测试 | `not_started` | ⑧ | `designdoc/verification/verification-result.md` | 依赖⑧ |
+| ⑧ | 执行开发 | `done` | TASK-S001～W103 | `apps/`、`packages/`、单测 | 单元全绿；集成/E2E 留⑨⑩；需 `DATABASE_URL` 跑 migrate/seed |
+| ⑨ | 集成测试 | `not_started` | ⑧ | `designdoc/verification/verification-result.md` | 依赖真 DB |
 | ⑩ | E2E 测试 | `not_started` | ⑨ | `apps/web/e2e/`、Playwright 报告 | 依赖⑧⑨ |
 | ⑪ | Git 提交推送 | `not_started` | ⑩ | 对齐检查清单 | 无 CI |
 | ⑫ | 测试环境部署 | `not_started` | ⑪ | `designdoc/delivery/deploy-log.md` | 依赖⑧ |
@@ -78,6 +78,6 @@
 
 ## 下一步
 
-**⑧ 执行开发** → Skill：`.gientech/skills/4p12s-implementation-execution.md`  
-输入：`designdoc/specs/tasks.md`（建议从 TASK-S001 → B101∥B102 → I101 …）  
-产出：`apps/`、`packages/`、单测证据（回写各 TASK）
+**⑨ 集成测试** → Skill：`.gientech/skills/4p12s-integration-test.md`  
+前提：配置 `DATABASE_URL`，执行 `npm run db:migrate` + `npm run db:seed`，再跑 `npm run test:integration`  
+产出：`designdoc/verification/verification-result.md`
