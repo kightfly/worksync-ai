@@ -17,7 +17,7 @@
 | **0** | 技术栈与模块边界写入 `整体设计.md` | ✅ done |
 | **1** | AGENTS + delivery-state + rules 路径 | ✅ done（①） |
 | **2** | 十二步 4p12s Skills（12 个 `4p12s-*.md`） | ✅ done（已存在） |
-| **3** | Playwright / CI / 根 package scripts | Playwright/`test:e2e` 已落地；CI → ⑪ |
+| **3** | Playwright / CI / 根 package scripts | Playwright/`test:e2e` 已落地；**CI 与测试托管仍缺 → ⑫ blocked** |
 | **4** | GienSpec + Superpower 最小集 | ✅ done（已存在） |
 
 ---

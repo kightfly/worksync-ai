@@ -5,7 +5,7 @@
 > **相关**：`AGENTS.md`、`harness-alignment-status.md`、`.gientech/rules/4p12s-gates.mdc`
 
 **最近更新**：2026-07-23  
-**当前焦点步骤**：**⑫ 测试环境部署**
+**当前焦点步骤**：**⑫ 测试环境部署**（`blocked`）
 
 ---
 
@@ -38,7 +38,8 @@
 |--------|--------------|
 | 集成/E2E 需真 PostgreSQL（`DATABASE_URL`） | ⑨⑩ 已解除（本地 `.env.local`） |
 | Playwright E2E 套件尚未落盘 | ⑩ 已解除 |
-| 无 CI workflow | 接受本期无 CI；⑪ 以本地验证证据 + 推送分支为准 |
+| 无 CI workflow | **⑫ 阻塞主因之一**；见 `deploy-log.md` |
+| 无 Web/API 测试托管 URL | **⑫ 阻塞**；仅有 Supabase DB |
 
 ---
 
@@ -56,8 +57,8 @@
 | ⑧ | 执行开发 | `done` | TASK-S001～W103 | `apps/`、`packages/`、单测 | 单元全绿；集成/E2E 留⑨⑩；需 `DATABASE_URL` 跑 migrate/seed |
 | ⑨ | 集成测试 | `done` | ⑧、真 `DATABASE_URL` | `designdoc/verification/verification-result.md`、`apps/api/src/api.integration.test.ts` | 16 passed；禁 Mock；`node scripts/run-integration.mjs` |
 | ⑩ | E2E 测试 | `done` | ⑨、真 API+Web+DB | `apps/web/e2e/`、`playwright.config.ts`、`verification-result.md` §B、`scripts/run-e2e.mjs` | E2E-001～009 全绿；`npm run test:e2e` |
-| ⑪ | Git 提交推送 | `done` | ⑩、`verification-result.md` | `designdoc/delivery/git-alignment-checklist.md`；本地 commit `a27844c`/`dc766c2` | 对齐通过；**push 因本机 SSH `Permission denied (publickey)` 未成功**，分支 ahead 2，需人在可认证环境执行 `git push`；无 `gh` 未开 PR |
-| ⑫ | 测试环境部署 | `not_started` | ⑪ | `designdoc/delivery/deploy-log.md` | 依赖⑧ |
+| ⑪ | Git 提交推送 | `done` | ⑩、`verification-result.md` | `designdoc/delivery/git-alignment-checklist.md`；HEAD `c9037c5` 已与 `origin/replay/4p12s-from-design` 同步 | 对齐通过；无 `gh` 未自动开 PR |
+| ⑫ | 测试环境部署 | `blocked` | ⑪ | `designdoc/delivery/deploy-log.md`、`.gientech/wiki/部署与运维.md` | **无 CI/CD、无公开 Web/API URL**；DB(Supabase) 可迁移；门禁未过，禁止宣称交付闭环 |
 
 ---
 
@@ -78,6 +79,6 @@
 
 ## 下一步
 
-**⑫ 测试环境部署** → Skill：`.gientech/skills/4p12s-deployment-execution.md`  
-前提：⑪ 分支已推送；准备可访问测试环境并写 `deploy-log.md`  
-产出：`designdoc/delivery/deploy-log.md`
+**⑫ 测试环境部署（阻塞中）**  
+解除条件：开通可访问测试 URL +（建议）CI 部署记录 → 更新 `deploy-log.md` 门禁勾选后改 `done`  
+规程：`.gientech/wiki/部署与运维.md`
